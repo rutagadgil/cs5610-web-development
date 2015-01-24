@@ -12,7 +12,7 @@
 
 <meta charset='utf-8' />
 
-<title>Demo Home Page</title>
+<title>Ruta's Home Page</title>
 
 <style type="text/css">
     ul.master_navigation
@@ -56,7 +56,7 @@
 
 <style type="text/css" media="screen">
     body {
-        width:900px;
+        width:auto;
         max-width: 100%;
         margin: 0;
         padding: 0;
@@ -67,18 +67,22 @@
         padding: 10px;
     }
 
-    img.top{
-        vertical-align:text-top;
-        border: 2px solid;
-        border-radius:25px;
+    .wrap{
+        vertical-align:top;
+        border: 1px solid;
+        border-radius:25px;       
     }
 
-    h4.aboutMe{
-        position:absolute;
-        left:20em;
-        top:7em;
-        max-width:550px;
+    p.aboutMe{
+        padding: 4px 7px;
+        font-family:'Lucida Calligraphy';
     }
+
+    h2{
+        font-family:Papyrus;
+    }
+
+    
 </style>
 
 </head>
@@ -102,20 +106,22 @@
     <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
     <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
     <li><a href="blog/" target="_blank">Blog</a></li>
+    <li><a href="experiments/allExperiments.aspx" target="_blank">Experiments</a></li>
 </ul>
 
 <hr />
 
 <div>
-<h2>Ruta Gadgil</h2>
-<img src="Ruta Gadgil.jpg" alt="Ruta Gadgil" width="275" height="400" class="top">
-<h4 class="aboutMe">
-Hi! I'm a Computer Science graduate student at Northeastern University.<br /><br />
-This website is being developed as a part of the Web Development course under the guidance of Prof. Richard Rasala.<br /><br />
-Thanks a lot for visiting my site.
-</h4>
+    <h2>Ruta Gadgil</h2>
+    <img src="Ruta Gadgil.jpg" alt="Ruta Gadgil" class="wrap">
+    
+    <p class="aboutMe">
+        Hi! I'm a Computer Science graduate student at Northeastern University.
+        This website is being developed as a part of the Web Development course under the guidance of Prof. Richard Rasala.
+    </p>
 <hr />
 </div>
+    <br />
 <p>
 Here is a link to the
 <a href="story/index.htm" target="_blank">Story Utility</a>

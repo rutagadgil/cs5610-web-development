@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+       div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            -webkit-animation: myanimation 10s infinite;
+        }
+
+        @-webkit-keyframes myanimation {
+            from {
+                left: 100px;
+                background:red;
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                left: 650px;
+                background:blue;
+                -webkit-transform: rotate(360deg); 
+            }
+        }
+        
+    </style>
+    <title>CSS - Animations</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Lucida Calligraphy';
+        }
+
+        h3 {
+            font-family: Papyrus;
+        }
+
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+    <h3>CSS : Animations</h3>
+    <hr />
+    <br />
+    <br />  
+    <div></div>
+    <br />
+    <br />  
+    <p>Note: This experiment will work on Google Chrome, Safari and Opera only</p>
+    <hr />
+    
+    <h4>Experiment description</h4>
+    <p>In this experiment I have implemented the animation property using CSS.
+     An animation allows you to gradually change the style of an element.</p>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p class="code_snippet">
+        -webkit-animation: myanimation 10s infinite;<br />
+        <br />
+        @-webkit-keyframes myanimation {<br />
+        from {<br />
+        left: 100px;<br />
+        background:red;<br />
+        -webkit-transform: rotate(0deg);<br />
+        }<br />
+        to {<br />
+        left: 600px;<br />
+        background:blue;<br />
+        -webkit-transform: rotate(360deg);<br />
+        }<br />
+    </p>
+    <hr />
+    <h4>Source Code</h4>
+    <a href="../fileview/Default.aspx?~/experiments/exp2-css-animation.html" target="_blank">experiment 2 : css animation</a>
+    <hr />
+    <h4>References</h4>
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+</body>
+</html>

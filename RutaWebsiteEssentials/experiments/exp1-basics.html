@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script>
+        function display() {
+            if (document.getElementById('htmlCanvas').checked) {
+
+            }
+            else if (document.getElementById('dragDrop').checked) {
+
+            }
+        }
+    </script>
+    <title>HTML basics</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Lucida Calligraphy';
+        }
+
+        h3 {
+            font-family: Papyrus;
+        }
+    </style>
+    <h3>HTML : Basics</h3>
+    <form action=display()>
+        <div>
+            <input type="radio" name="htmlBasics" id="htmlCanvas" value="htmlCanvas">HTML Canvas
+            <input type="radio" name="htmlBasics" id="dragDrop" value="dragDrop" >Drag/Drop
+        </div>
+        <input type="submit" />
+    </form>
+</body>
+</html>
