@@ -1,18 +1,21 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <script>
+    <script type="text/javascript">
         function display() {
             if (document.getElementById('htmlCanvas').checked) {
+                var html = "<h1>Hi!!!</h1>";
 
             }
             else if (document.getElementById('dragDrop').checked) {
-
+                var html = "<h1>Hello!!!<h2>";
             }
         }
     </script>
     <title>HTML basics</title>
 </head>
+
+
 <body>
     <style>
         body {
@@ -25,12 +28,9 @@
         }
     </style>
     <h3>HTML : Basics</h3>
-    <form action=display()>
         <div>
             <input type="radio" name="htmlBasics" id="htmlCanvas" value="htmlCanvas">HTML Canvas
             <input type="radio" name="htmlBasics" id="dragDrop" value="dragDrop" >Drag/Drop
         </div>
-        <input type="submit" />
-    </form>
 </body>
 </html>
