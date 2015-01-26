@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="icon" href="paint-icon1.ico" />
     <script type="text/javascript">
         function display() {
             if (document.getElementById('htmlCanvas').checked) {
@@ -28,9 +29,17 @@
         }
     </style>
     <h3>HTML : Basics</h3>
-        <div>
-            <input type="radio" name="htmlBasics" id="htmlCanvas" value="htmlCanvas">HTML Canvas
-            <input type="radio" name="htmlBasics" id="dragDrop" value="dragDrop" >Drag/Drop
-        </div>
+    <hr />
+    <label for="title">HTML Basics</label>
+    <br />
+    <br />
+    <form action="action_page.php">
+        Select a date: <input type="date" name="date">
+        <br />
+        <br />
+        Select your favorite color: <input type="color" name="favcolor" value="#ffffff">
+        <input type="submit">
+    </form>
+    
 </body>
 </html>

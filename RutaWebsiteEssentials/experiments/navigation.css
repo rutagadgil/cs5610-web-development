@@ -1,0 +1,65 @@
+﻿        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: bisque;
+            font-family: 'Lucida Calligraphy';
+        }
+
+        h3 {
+            font-family: Papyrus;
+        }
+
+        #horizontalmenu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        }
+
+        #horizontalmenu li {
+        float: left;
+        }
+
+        #horizontalmenu a:hover {
+        color:#b21056;
+        background-color:bisque;
+        }
+
+        #horizontalmenu li ul{
+        background-color:rgba(99, 52, 159, 0.75);
+        color:bisque;
+        display:none;
+        }
+
+        #horizontalmenu li:hover ul{
+        display:block;
+        }
+
+        #horizontalmenu li ul li{
+        clear:both;
+        display:block;
+        }
+
+        a:link, a:visited {
+        display: block;
+        width: 150px;
+        height: 30px;
+        background-color: rgba(99, 52, 159, 0.75);
+        color:bisque;
+        text-decoration:none;
+        text-align:center;
+        }
+        
+        .src-code a{
+            display:normal;
+            width:auto;
+            height:auto;
+            text-align:left;
+            background-color:bisque;
+            color:blue;
+            text-decoration:underline;
+        }

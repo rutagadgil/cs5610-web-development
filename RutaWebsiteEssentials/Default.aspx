@@ -13,8 +13,9 @@
     <meta name="viewport" content ="initial-scale=1, minimum-scale=1">
 
     <title>Ruta's Home Page</title>
-
+    <link rel="icon" href="paint-icon1.ico"/>
     <style type="text/css">
+
         ul.master_navigation
         {
             font-size: 100%;
@@ -142,7 +143,7 @@
         so that you may see a good collection of online documentation.
     </p>
 
-</div>
+<!--</div>-->
 
 </form>
 

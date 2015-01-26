@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>CSS Navigation Bar</title>
+    <link rel="icon" href="../paint-icon1.ico" />
+    <link rel="stylesheet" type="text/css" href="navigation.css">
+
+    <style>
+    </style>
+
+
+</head>
+<body>
+    <h3>CSS : Navigation Bar</h3>
+    <hr />
+    <br />
+    <p>
+        This is a navigation bar having submenus. Hovering on the menu will display submenus of the selected menu.
+        The experiment is implemented using CSS.
+    </p>
+    <br />
+      
+    <div id="horizontalmenu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#indianPaintings">Indian Paintings</a>
+                <ul>
+                    <li><a href="#Madhubani">Madhubani</a></li>
+                    <li><a href="#Miniature">Miniature</a></li>
+                    <li><a href="#Mysore">Mysore</a></li>
+                    <li><a href="#Pahari">Pahari</a></li>
+                    <li><a href="#Rajput">Rajput</a></li>
+                    <li><a href="#Tanjore">Tanjore</a></li>
+                </ul>
+            </li>
+            <li><a href="#type">Painting Media</a>
+                <ul>
+                    <li><a href="#Oil">Oil Painting</a></li>
+                    <li><a href="#Acryllic">Acryllic</a></li>
+                    <li><a href="#Water">Watercolor</a></li>
+                </ul>
+            </li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </div>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <h4>Code Snippet</h4>
+    <p class="code_snippet">
+        #horizontalmenu ul {
+        <br />list-style-type: none;
+        <br />margin: 0;
+        <br />padding: 0;
+        <br />overflow: hidden;
+        <br />}
+        <br />
+        <br />#horizontalmenu li {
+        <br />float: left;
+        <br />}
+        <br />
+        <br />#horizontalmenu a:hover {
+        <br />color:#b21056;
+        <br />background-color:bisque;
+        <br />}
+        <br />
+        <br />#horizontalmenu li ul{
+        <br />background-color:rgba(99, 52, 159, 0.75);
+        <br />color:bisque;
+        <br />display:none;
+        <br />}
+        <br />
+        <br />#horizontalmenu li:hover ul{
+        <br />display:block;
+        <br />}
+        <br />
+        <br />#horizontalmenu li ul li{
+        <br />clear:both;
+        <br />display:block;
+        <br />}
+        <br />
+        <br />a:link, a:visited {
+        <br />display: block;
+        <br />width: 150px;
+        <br />height: 30px;
+        <br />background-color: rgba(99, 52, 159, 0.75);
+        <br />color:bisque;
+        <br />text-decoration:none;
+        <br />text-align:center;
+        <br />}
+    </p>
+    <hr />
+    <h4>Source Code</h4>
+    <div class="src-code">
+        <a href="../fileview/Default.aspx?~/experiments/exp3-css-navigation-bar.html" target="_blank">experiment 3 : CSS Navigation Bar-HTML</a>
+        <br />
+        <a href="../fileview/Default.aspx?~/experiments/navigation.css" target="_blank">experiment 3 : CSS Navigation Bar-CSS</a>
+        <hr />
+        <h4>References</h4>
+        <a class="src-code" href="http://www.w3schools.com" target="_blank">W3Schools</a>
+    </div>
+    <br />
+</body >
+</html >
