@@ -1,18 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="icon" href="paint-icon1.ico" />
-    <script type="text/javascript">
-        function display() {
-            if (document.getElementById('htmlCanvas').checked) {
-                var html = "<h1>Hi!!!</h1>";
-
-            }
-            else if (document.getElementById('dragDrop').checked) {
-                var html = "<h1>Hello!!!<h2>";
-            }
-        }
-    </script>
+    <link rel="icon" href="../paint-icon1.ico" />
     <title>HTML basics</title>
 </head>
 
@@ -21,25 +10,107 @@
     <style>
         body {
             background-color: bisque;
-            font-family: 'Lucida Calligraphy';
+            font-family: Papyrus;
+            font-weight:bold;
+            font-size:large;
         }
-
         h3 {
             font-family: Papyrus;
+        }
+        label{
+            display:inline-block;
+            float:left;
+            clear:left;
+            width:30%;
+        }
+        input{
+            display:inline-block;
+            float:left;
+        }
+
+        .buttons{
+            margin:5%;
+            background-color:#2b7c85;
+            color:bisque;
+            border:solid;
+            height:40px;
+            width:140px;
+            border-radius:10px;
+        }
+        .inputs{
+            width:200px;
+            border-radius:10px;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        p{
+            font-weight:100;
+        }
+
+        a{
+            font-weight:100;
         }
     </style>
     <h3>HTML : Basics</h3>
     <hr />
-    <label for="title">HTML Basics</label>
+    <div>
+        <form class="form1">
+            <label>Enter date:</label><input class="inputs" type="date" name="date" placeholder="date" />
+            <br />
+            <label>Enter username:</label><input class="inputs" type="text" name="username" placeholder="username" />
+            <br />
+            <label>Enter password:</label><input class="inputs" type="password" name="password" placeholder="password" />
+            <br />
+            <label>Enter a number from 1 to 10:</label><input class="inputs" type="number" name="quantity" min="1" max="10" placeholder="quantity" />
+            <br />
+            <label>Select your favorite color:</label><input class="inputs" type="color" name="favcolor" value="#CC0066" />
+            <br />
+            <input class="buttons" type="submit" />
+            <input class="buttons" type="reset" />
+            <br />
+        </form>
+    </div>
     <br />
     <br />
-    <form action="action_page.php">
-        Select a date: <input type="date" name="date">
-        <br />
-        <br />
-        Select your favorite color: <input type="color" name="favcolor" value="#ffffff">
-        <input type="submit">
-    </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h4>Experiment description</h4>
+    <hr />
+    <p>
+        In this experiment I have implemented the animation property using CSS.
+        An animation allows you to gradually change the style of an element.
+    </p>
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        &lt;form class=&quot;form1&quot;&gt;<br />
+        &lt;label&gt;Enter date:&lt;/label&gt;&lt;input class=&quot;inputs&quot; type=&quot;date&quot; name=&quot;date&quot; placeholder=&quot;date&quot;/&gt;<br />
+        &lt;br /&gt;<br />
+        &lt;label&gt;Enter username:&lt;/label&gt;&lt;input class=&quot;inputs&quot; type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;username&quot; /&gt;<br />
+        &lt;br /&gt;<br />
+        &lt;label&gt;Enter password:&lt;/label&gt;&lt;input class=&quot;inputs&quot; type=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;password&quot;/&gt;<br />
+        &lt;br /&gt;<br />
+        &lt;label&gt;Enter a number from 1 to 10:&lt;/label&gt;&lt;input class=&quot;inputs&quot; type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;1&quot; max=&quot;10&quot; placeholder=&quot;quantity&quot; /&gt;<br />
+        &lt;br /&gt;<br />
+        &lt;label&gt;Select your favorite color:&lt;/label&gt;&lt;input class=&quot;inputs&quot; type=&quot;color&quot; name=&quot;favcolor&quot; value=&quot;#CC0066&quot; /&gt;<br />
+        &lt;br /&gt;<br />
+        &lt;input class =&quot;buttons&quot; type=&quot;submit&quot; /&gt;<br />
+        &lt;input class=&quot;buttons&quot; type=&quot;reset&quot; /&gt;<br />
+        &lt;/form&gt;<br />
+    </p>
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../fileview/Default.aspx?~/experiments/exp1-basics.html" target="_blank">experiment 1 : HTML Form Basics</a>
     
+    <h4>References</h4>
+    <hr />
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+
 </body>
 </html>

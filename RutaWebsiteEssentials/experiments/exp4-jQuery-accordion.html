@@ -29,11 +29,13 @@
     <style>
         body {
             background-color: bisque;
-            font-family: 'Lucida Calligraphy';
+            font-family: 'Papyrus';
+            font-weight:bold;
+            font-size:large;
         }
 
         h3 {
-            font-family: Papyrus;
+            font-family: 'Papyrus';
         }
 
         .color{
@@ -42,9 +44,11 @@
         .picture{
             float:left;
         }
-
+        .exp-desc{
+            font-weight:100;
+        }
         #accordion{
-            font-family: 'Lucida Calligraphy';
+            font-family: Papyrus;
             justify-content:center;    
             font-size:medium;
         }
@@ -122,17 +126,17 @@
         </div>
     </div>
 
-    <hr />
-
     <h4>Experiment description</h4>
-    <p>
+    <hr />
+    <p class="exp-desc">
         In this experiment I have implemented the accordion widget using jQuery.
         Accordion Widget in jQueryUI is a jQuery based expandable and collapsible
         content holder that is broken into sections and probably looks like tabs.
         jQueryUI provides accordion() method to achieve this.
     </p>
-    <hr />
+    
     <h4>Code Snippet</h4>
+    <hr />
     <p class="code_snippet">
         &lt;link rel=&quot;stylesheet&quot; href=&quot;//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css&quot;&gt;<br />
         &lt;script src=&quot;//code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;<br />
@@ -145,11 +149,13 @@
         });<br />
         &lt;/script&gt;<br />
     </p>
-    <hr />
+    
     <h4>Source Code</h4>
-    <a href="../fileview/Default.aspx?~/experiments/exp4-jQuery-accordion.html" target="_blank">experiment 4 : jQuery Accordion</a>
     <hr />
+    <a href="../fileview/Default.aspx?~/experiments/exp4-jQuery-accordion.html" target="_blank">experiment 4 : jQuery Accordion</a>
+    
     <h4>References</h4>
+    <hr />
     <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
     <br />
     <a href="http://jqueryui.com/accordion/" target="_blank">jQuery UI</a>

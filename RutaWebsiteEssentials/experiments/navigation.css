@@ -1,12 +1,14 @@
 ﻿        .code_snippet {
             background: white;
             border: 1px solid;
-            font-family: 'Times New Roman', Times, serif;
+            font-family: 'Times New Roman', Times, serif;   
         }
 
         body {
             background-color: bisque;
-            font-family: 'Lucida Calligraphy';
+            font-family: Papyrus;
+            font-weight:bold;
+            font-size:large;
         }
 
         h3 {
@@ -26,7 +28,7 @@
 
         #horizontalmenu a:hover {
         color:#b21056;
-        background-color:bisque;
+        background-color:#ff6a00;
         }
 
         #horizontalmenu li ul{

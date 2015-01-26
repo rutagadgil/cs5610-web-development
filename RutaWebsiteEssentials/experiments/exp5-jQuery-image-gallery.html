@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>jQuery Image SlideShow</title>
+    <link rel="icon" href="../paint-icon1.ico" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script type="text/javascript">
+        function slideshow() {
+            var $active = $('#slideshow img.active');
+            var $next = $active.next();
+
+            $next.addClass('active');
+            $active.removeClass('active');
+        }
+        $(function () {
+            setInterval("slideshow()", 1000);
+        });
+    </script>
+
+    <style>
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-weight:bold;
+            font-size:large;
+        }
+        h3 {
+            font-family: 'Papyrus';
+        }
+        p{
+            font-weight:100;
+        }
+        #slideshow{
+            position:relative;
+            height:450px;
+            width:600px;
+            border:dotted;
+            border-color:#b01369;
+            border-radius:25px;
+        }
+        #slideshow img{
+            position:absolute;
+            top:0;
+            left:0;
+            height:450px;
+            width:600px;
+            z-index:8;
+            border-radius:25px;
+        }
+        #slideshow img.active{
+            z-index:10;
+        }
+        #slideshow img.last-active{
+            z-index:9;
+        }
+    </style>
+</head>
+<body>
+    <h3>jQuery Image Gallery SlideShow</h3>
+    <hr />
+    <h4>Paintings by Milind Mullick</h4>
+    <div id="slideshow">
+        <img src="../images/image5.jpg" class="active">
+        <img src="../images/image6.jpg">
+        <img src="../images/image8.jpg">
+        <img src="../images/image9.jpg">
+    </div>
+    <br />
+    <h3>About the experiment</h3>
+    <hr />
+    <p>
+        In this experiment I have implemented an image-gallery using jQuery.
+        It also uses z-index of CSS which  specifies the stack order of an element.
+        It works on positioned elements and hence, the image having highest
+        index is displayed first.
+    </p>
+    <h3>Code Snippet</h3>
+    <hr />
+    <p class="code_snippet">
+        #slideshow img.active{
+        <br />z-index:10;
+        <br />}
+        <br />#slideshow img.last-active{
+        <br />z-index:9;
+        <br />}
+        <br />
+        <br />
+        function slideshow() {<br />
+        var $active = $(&apos;#slideshow img.active&apos;);<br />
+        var $next = $active.next();<br />
+        <br />
+        $next.addClass(&apos;active&apos;);<br />
+        $active.removeClass(&apos;active&apos;);<br />
+        }<br />
+        $(function () {<br />
+        setInterval(&quot;slideshow()&quot;, 3000);<br />
+        });<br />
+    </p>
+
+    <h3>Source Code</h3>
+    <hr />
+    <a href="../fileview/Default.aspx?~/experiments/exp5-jQuery-image-gallery.html" target="_blank">experiment 5 : CSS Image Gallery SlideShow</a>
+
+    <h3>References</h3>
+    <hr />
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+
+</body>
+</html>
