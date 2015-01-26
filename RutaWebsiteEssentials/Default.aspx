@@ -13,7 +13,7 @@
     <meta name="viewport" content ="initial-scale=1, minimum-scale=1">
 
     <title>Ruta's Home Page</title>
-    <link rel="icon" href="paint-icon1.ico"/>
+    <link rel="icon" href="../images/paint-icon1.ico"/>
     <style type="text/css">
 
         ul.master_navigation
@@ -61,7 +61,7 @@
         max-width: 100%;
         margin: 0;
         padding: 0;
-        background:url(background.jpg)
+        background:url(../images/background.jpg)
     }
 
     .pad {
@@ -115,7 +115,7 @@
     <div>
         <h2>Ruta Gadgil</h2>
         <div>
-            <img src="Ruta Gadgil.jpg" alt="Ruta Gadgil" class="picture">
+            <img src="../images/Ruta Gadgil.jpg" alt="Ruta Gadgil" class="picture">
         </div>
         <p class="aboutMe">
             <br />
