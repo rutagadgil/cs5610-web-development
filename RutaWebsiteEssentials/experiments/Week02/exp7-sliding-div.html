@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Sliding Div</title>
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    
+    <link rel="stylesheet" href="sliding-div.css" />
+    
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".trigger").hover(function () {
+                $("#panel").slideToggle("slow");
+                $(this).toggleClass("active");
+                return false;
+            });
+        });
+    </script>
+
+    <style>
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h3>Sliding Div</h3>
+    <hr />
+
+    <div id="panel">
+        <div id="panelImage">
+            <img src="../../images/watercolor.jpg" width="300" height="300" />
+        </div>
+        <div id="panelContent">
+            <p>
+                From the late 18th century through the 19th century, the market for printed books and domestic art
+                contributed substantially to the growth of the medium. Watercolors were the used as the basic document
+                from which collectible landscape or tourist engravings were developed, and handpainted watercolor originals
+                or copies of famous paintings contributed to many upper class art portfolios.
+            </p>
+        </div>
+    </div>
+    <a href="#" class="trigger">About Watercolor Paintings</a>
+    
+    <br />
+    <br />
+    <div id="experiment-details">
+        <h3>Experiment Description</h3>
+        <hr />
+        <p>
+            This is an experiment about sliding divs.
+            On hovering over "About Watercolor painting", a sliding div appears which contains information about 
+            Watercolor painting. The effect is acheived using CSS transitions and slideToggle() function in jQuery.
+        </p>
+    </div>
+
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        $(document).ready(function () {
+        <br />$(&quot;.trigger&quot;).hover(function () {
+        <br />$(&quot;#panel&quot;).slideToggle(&quot;slow&quot;);
+        <br />$(this).toggleClass(&quot;active&quot;);
+        <br />return false;
+        <br />});
+        <br />});        
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <div class="src-code">
+        <a href="../fileview/Default.aspx?~/experiments/exp7-sliding-div.html" target="_blank">experiment 7 : CSS Sliding Div - HTML</a>
+        <br />
+        <a href="../fileview/Default.aspx?~/experiments/sliding-div.css" target="_blank">experiment 7 : CSS Sliding Div - CSS</a>
+
+        <h4>References</h4>
+        <hr />
+        <a class="src-code" href="http://www.w3schools.com" target="_blank">W3Schools</a>
+    </div>
+    <br />
+</body>
+</html>

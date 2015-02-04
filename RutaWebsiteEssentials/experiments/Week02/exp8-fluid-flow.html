@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>CSS3 Fluid Flow Experiment</title>
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+</head>
+<body>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .part{
+            width:31%;
+            margin-left:2%;
+            float:left;
+            text-align:justify;
+        }
+        .center{
+            text-align:center;
+            color:bisque;
+            background-color:palevioletred;
+        }        
+        .image{
+            max-width:100%;
+            height:auto;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .clear{
+            clear:both;
+        }
+    </style>
+
+    <h3>CSS3 Fluid Flow Experiment</h3>
+    <hr />
+    <div id="mainpage">
+        <div class="part">
+            <h3 class="center">Watercolor Paintings</h3>
+            <img class="image" src="../../images/watercolor.jpg"/>
+            <p>
+                From the late 18th century through the 19th century, the market for printed books and domestic art
+                contributed substantially to the growth of the medium. Watercolors were the used as the basic document
+                from which collectible landscape or tourist engravings were developed, and handpainted watercolor originals
+                or copies of famous paintings contributed to many upper class art portfolios.
+            </p>
+        </div>
+        <div class="part">
+            <h3 class="center">Oil Paintings</h3>
+            <p>
+                Although oil paint was first used for the Buddhist paintings by Indian and Chinese painters in
+                western Afghanistan sometime between the fifth and tenth centuries, it did not gain popularity
+                until the 15th century.
+            </p>
+            <img class="image" src="../../images/oilPainting.jpg" />
+            <p>
+                The transition began with Early Netherlandish painting in Northern Europe
+                and by the height of the Renaissance oil painting techniques had almost completely replaced
+                tempera paints in the majority of Europe.
+            </p>
+            
+        </div>
+        <div class="part">
+            <h3 class="center">Acryllic Paintings</h3>
+            <p>
+                Compared to oil and watercolor, acrylic painting is a relatively modern medium for artistic expression.
+                The history of oil painting extends far back in Western history and watercolor has its roots in the
+                Renaissance, whereas acrylic has only just emerged over the course of the past century. As with watercolor
+                and oil, acrylic offers its own distinct set of characteristics and attributes, most notably its versatility,
+                immediacy, and durability. Many artists are attracted to acrylic painting for its dominant bright colors and
+                sharp brushstrokes.
+            </p>
+            <img class="image" src="../../images/image6.jpg" />
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="experiment-details">
+        
+        <h3>Experiment Description</h3>
+        <hr />
+        <p>
+            This is an experiment about sliding divs.
+            On hovering over "About Watercolor painting", a sliding div appears which contains information about
+            Watercolor painting. The effect is acheived using CSS transitions and slideToggle() function in jQuery.
+        </p>
+    </div>
+
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        body {
+        <br />background-color: bisque;
+        <br />font-family: &apos;Papyrus&apos;;
+        <br />font-size: large;
+        <br />}
+        <br />.part{
+        <br />width:30%;
+        <br />margin-left:2%;
+        <br />float:left;
+        <br />text-align:justify;
+        <br />}
+        <br />.center{
+        <br />text-align:center;
+        <br />}
+        <br />.image{
+        <br />max-width:100%;
+        <br />height:auto;
+        <br />}
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <div>
+        <a href="../fileview/Default.aspx?~/experiments/exp8-fluid-flow.html" target="_blank">experiment 8 : Fluid Flow </a>
+        
+        <h4>References</h4>
+        <hr />
+        <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+    </div>
+    <br />
+
+</body>
+</html>

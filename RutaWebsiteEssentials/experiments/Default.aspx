@@ -16,45 +16,35 @@
     <link rel="icon" href="../images/paint-icon1.ico"/>
     <style type="text/css">
 
-        ul.master_navigation
-        {
+        ul.master_navigation {
             font-size: 100%;
             font-weight: bold;
-            text-align: center;
             list-style: none;
-            margin: 0.5em 0;
+            margin: 2%;
             padding: 0;
+            left: auto;
+            float: right;
+            margin: 2%;
+            border: thin;
+            height:inherit;
         }
 
-        ul.master_navigation li
-        {
-            display: inline-block;
-            padding: 0 0.5%;
+        ul.master_navigation li{
             text-decoration:none;
-            
+            padding: 0 0.5%;
         }
 
-        a
-        {
-            color: #08f;
-            font-weight: bold;
-            text-decoration: none;
+        a{
+            color: #360c90;
+            text-transform:uppercase;
+            font-family:Calibri;
+            text-decoration:none;
+        }
+        a:hover{
+            color: #360d10;
         }
 
-        a:visited
-        {
-            color: #88f;
-        }
-
-        a:hover
-        {
-            color: #f00;
-        }
-
-        p
-        {
-            text-align: justify;
-        }
+        
     </style>
 
 <style type="text/css" media="screen">
@@ -68,17 +58,21 @@
 
     .pad {
         padding: 10px;
+
     }
 
     .picture{
         float:left;
-        border: 1px solid;
+        max-width:100%;
+        height:auto;
         border-radius:25px;
-        margin-left:10px;
+        margin-right:2%;
     }
 
-    p.aboutMe{
+    .aboutMe{
         font-family:'Lucida Calligraphy';
+        text-align:justify;
+        width:75%;
     }
 
     h2{
@@ -98,7 +92,7 @@
 
     <form id="form1" runat="server">
 
-    <div class="header">
+    <div>
         <ul class="master_navigation">
             <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
             <li><a href="statistics/" target="_blank">Statistics</a></li>
@@ -112,19 +106,14 @@
             <li><a href="blog/" target="_blank">Blog</a></li>
             <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
         </ul>
-        <hr />
+        
     </div>
-    <div>
-        <h2>Ruta Gadgil</h2>
-        <div>
-            <img src="images/Ruta Gadgil.jpg" alt="Ruta Gadgil" class="picture" />
-        </div>
-        <p class="aboutMe">
-            <br />
-            <br />
-            Hi! I'm a Computer Science graduate student at Northeastern University.
-            <br />
-            <br />
+    <div class="aboutMe">
+        <img src="../images/Ruta Gadgil.jpg" alt="Ruta Gadgil" class="picture" />
+        <p>
+            <h2>Ruta Gadgil</h2>
+            Hi! Welcome to my website!!
+            I'm a Computer Science graduate student at Northeastern University.
             This website is being developed as a part of the Web Development course 
             under the guidance of Prof. Richard Rasala.
         </p>
@@ -144,9 +133,6 @@
             target="_blank">Web Development Stories</a>
         so that you may see a good collection of online documentation.
     </p>
-
-<!--</div>-->
-
 </form>
 
 </div>

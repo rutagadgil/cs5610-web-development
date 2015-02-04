@@ -1,0 +1,79 @@
+﻿body{
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size:large;
+        }
+        #content {
+            margin: 50px 100px 10px 100px;
+            padding: 10px;
+            font-weight: bold;
+            background-color: None;
+            border: 1px solid #aaa;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-box-shadow: 0 0 15px #aaa;
+            -webkit-box-shadow: 0 0 15px #aaa;
+            filter: alpha(opacity=85);
+            opacity: .85;
+        }
+
+        #panel {
+            margin: 5px;
+            position: fixed;            
+            left: 0;
+            display: none;
+            width: 300px;
+            height: 500px;
+            background:#2d2c50;
+            border: 1px solid #aaa;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-box-shadow: 0 0 15px #aaa;
+            -webkit-box-shadow: 0 0 15px #aaa;
+            filter: alpha(opacity=85);
+            opacity: .95;
+        }
+
+        #panelImage {
+            width:100px;
+            height:100px;
+            float:left;
+            position:absolute;
+            opacity:0.5;
+            padding:100px 0;
+        }
+
+        #panelContent {
+            margin:15px;
+            width:220px;
+            height:300px;
+            position:absolute;
+            color:paleturquoise;
+            float:left;
+            text-align:left;
+            text-justify:inter-word;
+        }
+
+        a.trigger {
+            position: absolute;
+            left: 0;
+            background:#2d2c50;
+            color: palevioletred;
+            text-decoration: none;
+            width:300px;
+            border: 1px solid #aaa;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-box-shadow: 0 0 15px #aaa;
+            -webkit-box-shadow: 0 0 15px #aaa;
+            display: block;
+            text-align:justify;
+        }
+
+        a.active.trigger {
+            background:#2d2c67;
+        }
+
+        #experiment-details p{
+            
+        }

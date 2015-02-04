@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <title>SVG - HTML</title>
+
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }    
+
+        p{
+            text-align:justify;
+        }
+
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+
+    </style>
+    
+    
+</head >
+<body >
+    <h3>SVG</h3>
+    <hr />
+    <!--<input type="button" id="light" onclick="displayLight();"/>-->
+    <h5>A Ball</h5>
+    <div id="ball-without-shadow">
+        <svg width="500px" height="200px">
+            <!--ball-->
+            <defs>
+                <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="25%" fy="25%">
+                    <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.95" />
+                    <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                </radialGradient>
+            </defs>
+            <circle cx="245" cy="140" r="40" stroke="blue" fill="url(#grad2)"></circle>
+        </svg>
+    </div>
+    <h5>A Ball with its shadow</h5>
+    <div id="ball-with-shadow">
+        <svg width="500px" height="200px">
+            <!--creating a gradient for ball's shadow-->
+            <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="10%" style="stop-color:black;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#808080;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <!--actual shadow-->
+            <ellipse cx="300" cy="172" rx="75" ry="15" fill="url(#grad1)" />
+            <!--ball-->
+            <defs>
+                <radialGradient id="grad2" cx="50%" cy="50%" r="50%" fx="25%" fy="25%">
+                    <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0.95" />
+                    <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                </radialGradient>
+            </defs>
+            <circle cx="245" cy="140" r="40" stroke="blue" fill="url(#grad2)"></circle>
+        </svg>
+    </div>
+    
+    <h3>Experiment description</h3>
+    <hr />
+    <p>
+        In this experiment I have implemented HTML5 SVG elements. Here, RadialGradient is used to create the
+        effect for the Ball and LinearGradient is used to create effect for the shadow.
+        SVG is an acronym for Scalable Vector Graphics and is used to define vector based graphics for the Web.
+        SVG graphics do not lose any quality if they are zoomed or resized and every element and attribute in
+        SVG files can be animated.
+    </p>
+    <hr />
+
+    <h3>Code Snippet</h3>
+    <hr />
+    <p class="code_snippet">
+        <br />&lt;div id=&quot;ball-with-shadow&quot;&gt;
+        <br />&lt;svg width=&quot;500px&quot; height=&quot;200px&quot;&gt;
+        <br />&lt;!--creating a gradient for ball&apos;s shadow--&gt;
+        <br />&lt;defs&gt;
+        <br />&lt;linearGradient id=&quot;grad1&quot; x1=&quot;0%&quot; y1=&quot;0%&quot; x2=&quot;100%&quot; y2=&quot;0%&quot;&gt;
+        <br />&lt;stop offset=&quot;10%&quot; style=&quot;stop-color:black;stop-opacity:1&quot; /&gt;
+        <br />&lt;stop offset=&quot;100%&quot; style=&quot;stop-color:#808080;stop-opacity:1&quot; /&gt;
+        <br />&lt;/linearGradient&gt;
+        <br />&lt;/defs&gt;
+        <br />&lt;!--actual shadow--&gt;
+        <br />&lt;ellipse cx=&quot;300&quot; cy=&quot;172&quot; rx=&quot;75&quot; ry=&quot;15&quot; fill=&quot;url(#grad1)&quot; /&gt;
+        <br />&lt;!--ball--&gt;
+        <br />&lt;defs&gt;
+        <br />&lt;radialGradient id=&quot;grad2&quot; cx=&quot;50%&quot; cy=&quot;50%&quot; r=&quot;50%&quot; fx=&quot;25%&quot; fy=&quot;25%&quot;&gt;
+        <br />&lt;stop offset=&quot;0%&quot; style=&quot;stop-color:rgb(255,255,255);stop-opacity:0.95&quot; /&gt;
+        <br />&lt;stop offset=&quot;100%&quot; style=&quot;stop-color:rgb(0,0,255);stop-opacity:1&quot; /&gt;
+        <br />&lt;/radialGradient&gt;
+        <br />&lt;/defs&gt;
+        <br />&lt;circle cx=&quot;245&quot; cy=&quot;140&quot; r=&quot;40&quot; stroke=&quot;blue&quot; fill=&quot;url(#grad2)&quot;&gt;&lt;/circle&gt;
+        <br />&lt;/svg&gt;
+        <br />&lt;/div&gt;
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../fileview/Default.aspx?~/experiments/exp9-SVG.html" target="_blank">experiment 9 : SVG</a>
+
+    <h4>References</h4>
+    <hr />
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+</body >
+</html >
