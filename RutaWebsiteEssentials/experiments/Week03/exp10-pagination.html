@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="pagination.css"/>
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <title>jQuery Pagination </title>
+
+    <script>
+        $(document).ready(function () {
+            page1();
+        });
+        function page1() {
+            $("#pagination-content-1").show();
+            $("#pagination-content-2").hide();
+            $("#pagination-content-3").hide();
+        }
+        function page2() {
+            $("#pagination-content-2").show();
+            $("#pagination-content-1").hide();
+            $("#pagination-content-3").hide();
+        }
+        function page3() {
+            $("#pagination-content-3").show();
+            $("#pagination-content-1").hide();
+            $("#pagination-content-2").hide();
+        }
+    </script>
+</head>
+<body>
+    <div class="pages"></div>
+    <div class="pagination">
+        <h3>Pagination example</h3>
+        <hr />
+        <div id="content">
+            <div class="page-content" id="pagination-content-1">
+                <p>
+                    Watercolor painting has the reputation of being quite demanding; 
+                    it is more accurate to say that watercolor techniques are unique to watercolor.
+                    Unlike oil or acrylic painting, where the paints essentially stay where they are put and
+                    dry more or less in the form they are applied, water is an active and complex partner in the
+                    watercolor painting process, changing both the absorbency and shape of the paper when it is wet 
+                    and the outlines and appearance of the paint as it dries.
+                </p>
+                <p>
+                    Many difficulties occur because watercolor paints do not have high hiding power, so previous efforts
+                    cannot simply be painted over; and the paper support is both absorbent and delicate, so the paints
+                    cannot simply be scraped off, like oil paint from a canvas, but must be laboriously
+                    (and often only partially) lifted by rewetting and blotting. Watercolor has a longstanding
+                    association with drawing or engraving, and the common procedure to curtail such mistakes is to make a 
+                    precise, faint outline drawing in pencil of the subject to be painted, to use small brushes, and to paint
+                    limited areas of the painting only after all adjacent paint areas have completely dried.              
+                </p>
+                <h4 class="center">Page1</h4>
+            </div>
+
+            <div class="page-content" id="pagination-content-2">
+                <p>
+                    Another characteristic of watercolor paints is that the carbohydrate binder is only a small
+                    proportion of the raw paint volume, and much of the binder is drawn between the hydrophilic cellulose
+                    fibers of wet paper as the paint (and paper) dries. As a result, watercolor paints do not form an enclosing
+                    layer of vehicle around the pigment particles and a continuous film of dried vehicle over the painting
+                    support, but leave pigment particles scattered and stranded like tiny grains of sand on the paper.
+                    This increases the scattering of light from both the pigment and paper surfaces, causing a characteristic
+                    whitening or lightening of the paint color as it dries. The exposed pigment particles are also vulnerable
+                    to damaging ultraviolet light, which can compromise pigment permanency.
+                </p>
+                <p>
+                    Watercolor paint is traditionally and still commonly applied with brushes,
+                    but modern painters have experimented with many other implements, particularly sprayers, scrapers,
+                    sponges or sticks, and have combined watercolors with pencil, charcoal, crayon, chalk, ink, engraving,
+                    monotype, lithography and collage, or with acrylic paint.
+                </p>
+                <h4 class="center">Page2</h4>
+            </div>
+
+            <div class="page-content" id="pagination-content-3">
+                <p>
+                    Many watercolor painters, perhaps uniquely among all modern visual artists, still adhere to prejudices
+                    dating from the 19th century rivalry between "transparent" and bodycolor painters. Among these are
+                    injunctions never to use white paint, never to use black paint, only to use transparent color, or only
+                    to work with "primary" color mixtures. In fact, many superb paintings flout some or all of these guidelines,
+                    and they have little relevance to modern painting practice.
+                </p>
+                <p>
+                    Perhaps only with the exception of egg tempera, watercolor is the painting medium that artists most
+                    often compound themselves, by hand, using raw pigment and paint ingredients purchased from retail suppliers
+                    and prepared using only kitchen utensils. Even with commercially prepared paints, watercolor is prized
+                    for its nontoxic, tap ready solvent; lack of odor or flammability; prompt drying time; ease of cleanup
+                    and disposal; long shelf life; independence from accessory equipment (jars, rags, easels, stretchers, etc.).
+                    Its portability makes it ideal for plein air painting, and painters today can buy compact watercolor
+                    kits—containing a dozen or more pan paints, collapsible brushes, water flask, brush rinsing cup and fold
+                    out mixing trays—that fit neatly into a coat pocket.
+                </p>
+                <h4 class="center">Page3</h4>
+            </div>
+        </div>
+        
+        <div id="page-control" class="page-control">
+            <ul class="page-numbers">
+                <li id="page-control-item3" class="page-control-items"><a href="#page3" onclick="page3();">3</a></li>
+                <li id="page-control-item2" class="page-control-items"><a href="#page2" onclick="page2();">2</a></li>
+                <li id="page-control-item1" class="page-control-items"><a href="#page1" onclick="page1();">1</a></li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        In this experiment, I have implemented the concept of pagination using javascript and jQuery.
+        For every page, I hide/show the respective divs based on the selected page. When the document is ready, the content
+        on the first page is loaded.
+    </p>
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        function page1() {<br />
+        $(&quot;#pagination-content-1&quot;).show();<br />
+        $(&quot;#pagination-content-2&quot;).hide();<br />
+        $(&quot;#pagination-content-3&quot;).hide();<br />
+        }<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <div class="src-code">
+        <a href="../../fileview/Default.aspx?~/experiments/Week03/exp10-pagination.html" target="_blank">experiment 10 : Pagination - HTML</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/Week03/pagination.css" target="_blank">experiment 10 : Pagination - CSS</a>
+
+        <h4>References</h4>
+        <hr />
+        <a class="src-code" href="http://www.w3schools.com" target="_blank">W3Schools</a>
+    </div>
+    <br />
+</body>
+</html>

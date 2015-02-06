@@ -1,0 +1,40 @@
+﻿#content{
+            border:1px solid;
+            border-color:#ae196b;
+            text-align:justify;
+            margin:1%;
+        }
+        .page-control-items a{
+            text-decoration:none;
+            color:bisque;
+            background-color:#ae196b;
+        }
+
+        .page-content{
+            margin:1%;
+        }
+        .page-control-items{
+            float:right;
+            list-style-type:none;
+            margin:1%;
+        }
+        
+        .center{
+            text-align:center;
+        }
+
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;   
+        }
+
+        body {
+            background-color: bisque;
+            font-family: Papyrus;
+            font-size:large;   
+        }
+
+        h3 {
+            font-family: Papyrus;
+        }

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+
+    <title>Image Gallery with Fade Effects</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            for (var i = 0; i < 5; i++)
+            {
+                $("#fadeEffect1").fadeOut(3000);
+                $("#fadeEffect2").fadeOut(3000);
+                $("#fadeEffect1").fadeIn(2000);
+                $("#fadeEffect2").fadeIn(2000);
+            }
+        });
+    </script>
+    <style>
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-weight:bold;
+            font-size:large;
+            
+        }
+        h3 {
+            font-family: 'Papyrus';
+        }
+        p{
+            font-weight:100;
+        }
+        .image{
+            float:left;
+            max-width:100%;
+            height:auto;
+            margin:1%;
+            border:dotted;
+            border-color:black;
+        }
+        .wrapper {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>jQuery Image Gallery SlideShow</h3>
+    <hr />
+    <h4>Paintings by Milind Mullick</h4>
+    <div class="wrapper">
+        <div class="image" id="fadeEffect1"><img src="../../images/image8.jpg"></div>
+        <div class="image" id="fadeEffect2"><img src="../../images/image9.jpg"></div>
+        
+    </div>
+    <br />
+    <h3>About the experiment</h3>
+    <hr />
+    <p>
+        In this experiment I have implemented an image-gallery using jQuery Fade Effects.
+    </p>
+    <h3>Code Snippet</h3>
+    <hr />
+    <p class="code_snippet">
+        <br />for (var i = 0; i < 5; i++)
+        <br />{
+        <br />$("#fadeEffect1").fadeOut(3000);
+        <br />$("#fadeEffect2").fadeOut(3000);
+        <br />$("#fadeEffect1").fadeIn(2000);
+        <br />$("#fadeEffect2").fadeIn(2000);
+        <br />}
+    </p>
+
+    <h3>Source Code</h3>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/week03/exp11-slide-show-with-fade-effects.html" target="_blank">experiment 11 : CSS Image Gallery Fade Effects</a>
+
+    <h3>References</h3>
+    <hr />
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+</body>
+</html>

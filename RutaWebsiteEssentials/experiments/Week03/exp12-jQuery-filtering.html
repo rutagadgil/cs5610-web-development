@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <title>jQuery Filtering</title>
+    <style>
+        .all-content{
+            float:left;
+            width:45%;
+            text-align:justify;
+            margin:2%;
+        }
+        .filter{
+            align-content:center;
+        }
+        
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;   
+        }
+
+        body {
+            background-color: bisque;
+            font-family: Papyrus;
+            font-size:large;   
+        }
+
+        h3 {
+            font-family: Papyrus;
+        }
+
+        .clear{
+            clear:both;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        function filter() {
+            var mySelect = document.getElementById("paintings");
+            var selectedOption = mySelect.options[mySelect.selectedIndex].value;
+            $(".filtered-content").text(($("p").filter("."+selectedOption)).text());
+        }
+    </script>
+</head>
+<body>
+    <h3>jQuery Traversing: Filtering</h3>
+    <hr />
+    <div class="wrapper">
+        <div class="all-content">
+            <h4>Madhubani Painting</h4>
+            <p class="madhubani">
+                Madhubani painting originated in a small village, known as Maithili,
+                of the Bihar state of India. Initially, the womenfolk of the village
+                drew the paintings on the walls of their home, as an illustration of
+                their thoughts, hopes and dreams. With time, the paintings started
+                becoming a part of festivities and special events, like marriage.
+            </p>
+
+            <h4>Miniature Painting</h4>
+            <p class="miniature">
+                Miniatures paintings are beautiful handmade paintings, which are quite
+                colorful but small in size. The highlight of these paintings is the intricate
+                and delicate brushwork, which lends them a unique identity.
+            </p>
+
+            <h4>Mysore Painting</h4>
+            <p class="mysore">
+                Mysore Painting is a form of classical South Indian painting, which evolved
+                in the Mysore city of Karnataka. During that time, Mysore was under the reign
+                of the Wodeyars and it was under their patronage that this school of painting
+                reached its zenith.
+            </p>
+            <h4>Pahari Painting</h4>
+            <p class="pahari">
+                Pahari painting is the name given to Rajput paintings, made in the in the
+                Himachal Pradesh and Jammu & Kashmir states of India. These painting developed
+                as well as flourished during the period of 17th to 19th century. Indian Pahadi
+                paintings have been done mostly in miniature forms.
+
+            </p>
+            <h4>Rajput Painting</h4>
+            <p class="rajput">
+                Rajput painting originated in the royal states of Rajasthan, somewhere around
+                the late 16th and early 17th century. The Mughals ruled almost all the princely
+                states of Rajasthan at that time and because of this; most of the schools of
+                Rajput Painting in India reflect strong Mughal influence.
+
+            </p>
+            <h4>Tanjore Painting</h4>
+            <p class="tanjore">
+                Tanjore Painting is one of the most popular forms of classical South Indian painting.
+                It is the native art form of Thanjavur (also known as Tanjore) city of Tamil Nadu.
+                The dense composition, surface richness and vibrant colors of Indian Thanjavur Paintings
+                distinguish them from the other types of paintings.
+            </p>
+        </div>
+        <div class="all-content">
+            <div class="filter">
+                <p>Select the content you wish to filter</p>
+                <select name="paintings" id="paintings">
+                    <option value="select">--select--</option>
+                    <option value="madhubani">Madhubani Paintings</option>
+                    <option value="miniature">Miniature Paintings</option>
+                    <option value="mysore">Mysore Paintings</option>
+                    <option value="pahari">Pahari Paintings</option>
+                    <option value="rajput">Rajput Paintings</option>
+                    <option value="tanjore">Tanjore Paintings</option>
+                </select>
+                <input type="button" value="submit" onclick="filter();">
+                <br />
+                <br />
+                <br />
+            </div>
+            <div class="filtered-content"></div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="clear"></div>
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        This experiment uses filter method of jQuery Traversing. A huge text is present on the left div.
+        The drop down is used to select a particular type of painting from text and displays only relevant
+        information of selected value.
+    </p>
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        function filter() {<br />
+        var mySelect = document.getElementById(&quot;paintings&quot;);<br />
+        var selectedOption = mySelect.options[mySelect.selectedIndex].value;<br />
+        $(&quot;.filtered-content&quot;).text(($(&quot;p&quot;).filter(&quot;.&quot;+selectedOption)).text());<br />
+        }<br />
+        &lt;select name=&quot;paintings&quot; id=&quot;paintings&quot;&gt;<br />
+        &lt;option value=&quot;select&quot;&gt;--select--&lt;/option&gt;<br />
+        &lt;option value=&quot;madhubani&quot;&gt;Madhubani Paintings&lt;/option&gt;<br />
+        &lt;option value=&quot;miniature&quot;&gt;Miniature Paintings&lt;/option&gt;<br />
+        &lt;option value=&quot;mysore&quot;&gt;Mysore Paintings&lt;/option&gt;<br />
+        &lt;option value=&quot;pahari&quot;&gt;Pahari Paintings&lt;/option&gt;<br />
+        &lt;option value=&quot;rajput&quot;&gt;Rajput Paintings&lt;/option&gt;<br />
+        &lt;option value=&quot;tanjore&quot;&gt;Tanjore Paintings&lt;/option&gt;<br />
+        &lt;/select&gt;<br />
+        &lt;input type=&quot;button&quot; value=&quot;submit&quot; onclick=&quot;filter();&quot;&gt;<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <div class="src-code">
+        <a href="../../fileview/Default.aspx?~/experiments/Week03/exp12-jQuery-filtering.html" target="_blank">experiment 12 : jQuery Filtering</a>
+        <br />
+
+        <h4>References</h4>
+        <hr />
+        <a class="src-code" href="http://www.w3schools.com" target="_blank">W3Schools</a>
+    </div>
+    <br />
+
+</body>
+</html>

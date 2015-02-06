@@ -1,3 +1,4 @@
 ﻿../story/whatisnext.htm?../experiments/						What is Next?
 ../story/index.htm?../experiments/Week01/					Week 01 - Experiments
 ../story/index.htm?../experiments/Week02/					Week 02 - Experiments
+../story/index.htm?../experiments/Week03/					Week 03 - Experiments

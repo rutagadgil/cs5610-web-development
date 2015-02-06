@@ -44,10 +44,6 @@
             color: #360d10;
         }
 
-        
-    </style>
-
-<style type="text/css" media="screen">
     body {
         width:auto;
         max-width: 100%;
@@ -69,11 +65,19 @@
         margin-right:2%;
     }
 
-    .aboutMe{
-        font-family:'Lucida Calligraphy';
-        text-align:justify;
-        width:75%;
-    }
+        .aboutMe{
+            width:75%;
+            font-family:'Lucida Calligraphy';
+            text-align:justify;
+            margin-left:2%;
+            float:left;
+            text-align:justify;
+        }
+        .picture{
+            max-width:100%;
+            height:auto;
+            border-radius:25px;
+        }
 
     h2{
         font-family:Papyrus;
@@ -82,7 +86,8 @@
     .clear{
         clear:both;
     }
-</style>
+        
+    </style>
 
 </head>
 
