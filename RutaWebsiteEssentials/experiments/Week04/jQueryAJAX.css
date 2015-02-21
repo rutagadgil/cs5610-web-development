@@ -1,0 +1,25 @@
+﻿        body{
+            font-family:Papyrus;
+            background-color:bisque;
+            font-size:medium;
+        }
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;   
+        }
+        .enclosure{
+            border:1px solid;
+            margin:2%;
+        }
+        .wrapper{
+            margin:2%;
+        }
+        .btn{
+            border:solid;
+            border-radius:10px;
+            color:bisque;
+            background-color:#18395e;
+            left:100px;
+            height:30px;
+        }

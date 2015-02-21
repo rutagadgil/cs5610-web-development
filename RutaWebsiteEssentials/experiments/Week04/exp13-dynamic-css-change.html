@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    <link rel="stylesheet" type="text/css" href="dynamicCSS.css">
+    <title>jQuery - Changing CSS dynamically</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(
+            function () {
+            $(".tom-and-jerry").hide();
+            $(".flintstones").hide();
+            }
+        );
+
+        function changeCSSTomNJerry() {
+            $(".changeDiv").removeClass("flint");
+            $(".changeDiv").addClass("tnj");
+            $(".tom-and-jerry").show();
+            $(".flintstones").hide();
+        }
+
+        function changeCSSFlintstones() {
+            $(".changeDiv").removeClass("tnj");
+            $(".changeDiv").addClass("flint");
+            $(".tom-and-jerry").hide();
+            $(".flintstones").show();
+        }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h3><b>Changing Div</b></h3>
+        <hr />
+        <div>
+            <h3>Click on your Favorite cartoon:</h3>
+            <input type="button" name="tnj" value="Tom & Jerry" onclick="changeCSSTomNJerry();" />
+            <input type="button" name="flintstones" value="Flintstones" onclick="changeCSSFlintstones();" />
+        </div>
+        <div class="changeDiv">
+            <p class="tom-and-jerry">
+                <b>
+                    Tom and Jerry is an American animated series of short films created in 1940 by William Hanna and Joseph Barbera.
+                    It centers on a rivalry between its two main characters, Tom Cat and Jerry Mouse, and many recurring characters,
+                    based around slapstick comedy.
+                    In its original run, Hanna and Barbera produced 114 Tom and Jerry shorts for Metro-Goldwyn-Mayer from 1940 to 1957.
+                    During this time, they won seven Academy Awards for Animated Short Film, tying for first place with Walt Disney's
+                    Silly Symphonies with the most awards in the category. After the MGM cartoon studio closed in 1957, MGM revived the
+                    series with Gene Deitch directing an additional 13 Tom and Jerry shorts for Rembrandt Films from 1960 to 1962.
+                    Tom and Jerry then became the highest-grossing animated short film series of that time, overtaking Looney Tunes.
+                    Chuck Jones then produced another 34 shorts with Sib-Tower 12 Productions between 1963 and 1967.
+                    Two more shorts were produced, The Mansion Cat in 2001 and The Karate Guard in 2005, for a total of 163 shorts.
+                    Various shorts have been released for home media since the 1990s.
+                </b>
+            </p>
+            <p class="flintstones">
+                <b>
+                    The Flintstones is an animated, prime-time American television sitcom that was broadcast from September 30, 1960,
+                    to April 1, 1966, on ABC. The show was produced by Hanna-Barbera. The Flintstones was about a working-class Stone
+                    Age man's life with his family and his next-door neighbor and best friend.
+                    The show's continuing popularity rested heavily on its juxtaposition of modern everyday concerns in the Stone Age
+                    setting. The Flintstones was the most financially successful network animated franchise for three decades,
+                    until The Simpsons debuted.
+                    The show is set in the Stone Age town of Bedrock. In this fantasy version of the past, dinosaurs, saber-toothed
+                    cats, woolly mammoths, and other long-extinct animals co-exist with cavemen. Like their mid-20th century
+                    counterparts, these cavemen listen to records, live in split-level homes, and eat out at restaurants, yet their
+                    technology is made entirely from pre-industrial materials and largely powered through the use of animals.
+                    For example, the cars are made out of stone, wood, and animal skins, and powered by the passengers' feet.
+                </b>
+            </p>
+        </div>
+    </div>
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        This experiment uses jQuery addClass() and removeClass() to change the CSS dynamically.
+        The addClass() method does not remove existing class attributes, it only adds one or more class names to the class
+        attribute.
+        The remove() method removes the selected element. It also accepts one parameter, which allows you to filter the 
+        elements to be removed.
+    </p>
+    
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        function changeCSSTomNJerry() {<br />
+        $(".changeDiv").removeClass("flint");<br />
+        $(".changeDiv").addClass("tnj");<br />
+        $(".tom-and-jerry").show();<br />
+        $(".flintstones").hide();<br />
+        }<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <div class="src-code">
+        <a href="../../fileview/Default.aspx?~/experiments/Week04/exp13-dynamic-css-change.html" target="_blank">experiment 13 : Dynamic CSS - HTML</a>
+        <br />
+        <a href="../../fileview/Default.aspx?~/experiments/Week04/dynamicCSS.css" target="_blank">experiment 13 : Dynamic CSS - CSS</a>
+
+        <h4>References</h4>
+        <hr />
+        <a class="src-code" href="http://www.w3schools.com" target="_blank">W3Schools</a><br />
+        <a class="src-code" href="http://davidwalsh.name/" target="_blank">David Walsh</a>
+    </div>
+</body>
+</html>

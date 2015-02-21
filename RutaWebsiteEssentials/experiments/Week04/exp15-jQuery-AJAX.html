@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+    
+    <link rel="stylesheet" href="jQueryAJAX.css"/>
+
+    <title>jQuery AJAX</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="jQueryAJAX.js"></script>
+</head>
+<body>
+    <h3>jQuery AJAX</h3>
+    <hr />
+    <div class="enclosure">
+        <div class="wrapper">
+            <p><b>Glimpses of Week 1 and Week 2:</b></p>
+            <button class="btn" id="exp1">HTML Basics</button>
+            <button class="btn" id="exp2">Fluid Layout Experiment</button>
+            <div id="content"></div>
+        </div>
+    </div>
+    <h3>Experiment Description</h3>
+        <p>
+            In this experiment I have implemented jQuery AJAX.
+            AJAX is used to exchange data with a server, and update parts of a web page - 
+            without reloading the whole page.
+            Query provides several methods for AJAX functionality.
+            With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote server using both
+            HTTP Get and HTTP Post - And you can load the external data directly into the selected HTML elements of 
+            your web page.
+            Here, I have used the Get method to get data from a couple of my previous experiments.
+        </p>
+    <hr />
+    <h4>Code Snippet</h4>
+    <p class="code_snippet">
+        $("#exp1").click(function () {<br />
+        alert("Inside click function");<br />
+        $.get("../Week01/exp1-basics.html", function(data, status){<br />
+        var msg = data;<br />
+        <br />
+        document.getElementById("content").innerHTML=msg;<br />
+        });<br />
+        });<br />
+    </p>
+    <hr />
+    <h4>Source Code</h4>
+    <a href="../../fileview/Default.aspx?~/experiments/Week04/exp15-jQuery-AJAX.html" target="_blank">experiment 15 : HTML</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week04/animation.css" target="_blank">experiment 2 : CSS</a>
+    <hr />
+    <h4>References</h4>
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>
+
+</body>
+</html>

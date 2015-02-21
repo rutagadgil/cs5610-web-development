@@ -1,3 +1,4 @@
-﻿exp10-pagination.html										Pagination
+﻿../../story/whatisnext.htm?../experiments/Week03/story.txt	What is Next?
+exp10-pagination.html										Pagination
 exp11-slide-show-with-fade-effects.html						Images with Fade Effects
-exp12-jQuery-filtering.html							jQuery Filtering
+exp12-jQuery-filtering.html									jQuery Filtering

@@ -1,0 +1,42 @@
+﻿table {
+            background-color:palevioletred;
+            border-collapse:collapse;
+            color:white;
+        }
+
+        table, td, th {
+            border:1px solid black;
+        }
+        td {
+            padding: 5px;
+        }
+                body{
+            font-family:Papyrus;
+            background-color:bisque;
+            font-size:medium;
+        }
+        
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;   
+        }
+
+        .btn{
+            border:solid;
+            border-radius:10px;
+            color:bisque;
+            background-color:#18395e;
+            left:100px;
+            height:30px;
+        }
+        .wrapper{
+            border:1px solid;
+            margin:10px;
+        }
+        .enclosure{
+            margin:10px;
+        }
+        .center{
+            text-align:center;
+        }

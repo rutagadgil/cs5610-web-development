@@ -1,4 +1,5 @@
-﻿exp1-basics.html                                            HTML Basics
+﻿../../story/whatisnext.htm?../experiments/Week01/story.txt	What is Next?
+exp1-basics.html                                            HTML Basics
 exp2-css-animation.html                                     CSS Animation
 exp3-css-navigation-bar.html								CSS Navigation Bar
 exp4-jQuery-accordion.html                                  jQuery Accordion

@@ -1,0 +1,42 @@
+﻿        body{
+            font-family:Papyrus;
+            background-color:bisque;
+            font-size:medium;
+        }
+
+
+        .tnj{
+            background:url("https://trueclassics.files.wordpress.com/2012/09/tom-and-jerry-jones.jpg");
+            color:black;
+            
+        }
+        
+        .flint{
+            background:url("http://i3.mirror.co.uk/incoming/article129219.ece/alternates/s615/the-flintstones-pic-hanna-barbera-881281892.jpg");
+            color:black;
+        }
+        
+        .changeDiv{
+            width:50%;
+            align-content:center;
+            text-align:justify;
+        }
+
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;   
+        }
+
+        wrapper{
+            border:solid 1px;
+        }
+
+        .tom-and-jerry{
+            font-size:large;
+            border:solid;
+        }
+        .flintstones{
+            font-size:large;
+            border:solid;
+        }
