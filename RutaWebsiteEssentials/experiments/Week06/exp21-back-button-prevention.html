@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Back Button Prevention</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="back-button-prevention.js"></script>
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />    
+    
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Back button prevention</h3>
+    <hr />
+
+    <div>
+        <button id="nextPage">Next Page</button>
+    </div>
+
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        In this experiment, I have implemented previous page navigation prevention.
+        This is achieved using window.history.forward().
+        We cannot literally disable the back button. However, this is a good method to prevent such navigations.
+        This technique can be used in a variety of applications especially after form submissions or logouts
+        and is a very important issue that needs to be addressed for security purposes.
+        It could also be very useful for my project implementation. Hence, I have included it as an experiment. 
+    </p>
+
+    <h3>Code Snippet</h3>
+    <hr />
+    <p class="code_snippet">
+        $(document).ready(function () {<br />
+        $(&quot;#nextPage&quot;).click(function () {<br />
+        window.location.href = &quot;newPage.html&quot;;<br />
+        });<br />
+        });<br />
+        window.history.forward();<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week06/exp21-back-button-prevention.html" target="_blank">experiment 21 : Back Button Prevention</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week06/newPage.html" target="_blank">experiment 21 : Next Page</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week06/back-button-prevention.js" target="_blank">experiment 21 : Back Button Prevention - JS</a>
+
+    <h4>References</h4>
+    <hr />
+    <a href=http://viralpatel.net/blogs/disable-back-button-browser-javascript/ target="_blank">Blog on back button prevention</a>
+    <br />
+    <a href="http://net4.ccs.neu.edu/home/shrutip/" target="_blank">Similar experiment</a>
+
+    
+</body>
+</html>

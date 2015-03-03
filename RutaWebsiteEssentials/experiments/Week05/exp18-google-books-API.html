@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <title>Google Books API</title>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="google-books-api.js"></script>
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        #bookAPI{
+            border:1px solid;
+            width:750px;
+            height:400px;
+            overflow:scroll;
+        }
+        #content{
+            margin:1%;
+            font-family:'Times New Roman';
+            text-align:justify;
+        }
+    </style>
+</head>
+<body>
+    <h3>Google Books API</h3>
+    <div id="bookAPI">
+        <span>Book Name:<input type="text" autofocus id="bookName"/></span>
+        <button id="button1">Search Books</button>
+        <div id="numberOfBooks"></div>
+        <div id="content"></div>
+    </div>
+
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        This is an experiment on Google Books API. The API is invoked using REST from Javascript using the callback
+        query parameter and a callback function. This allows you to write rich applications that display Books data
+        without writing any server side code.
+    </p>
+
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        $(document).ready(function () {<br />
+        $(&quot;#button1&quot;).click(function () {<br />
+        document.getElementById(&quot;content&quot;).innerHTML = &quot;&quot;;<br />
+        var url1 = &quot;https://www.googleapis.com/books/v1/volumes?q=&quot;;<br />
+        var bookName = $(&quot;#bookName&quot;).val();<br />
+        var url2 = &quot;&amp;callback=handleResponse&quot;;<br />
+        var url = url1 + bookName + url2;<br />
+        searchAllBooks(url);<br />
+        });<br />
+        });<br />
+        <br />
+        function searchAllBooks(url) {<br />
+        $.ajax({<br />
+        url: url,<br />
+        dataType: &apos;jsonp&apos;<br />
+        });<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week05/exp18-google-books-api.html" target="_blank">experiment 18 : Google Books API - HTML</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week05/google-books-api.js" target="_blank">experiment 18 : Google Books API - Javascript</a>
+    <h4>References</h4>
+    <hr />
+    <a href="http://www.w3schools.com" target="_blank">W3Schools</a>    
+    <br />
+    <a href="https://developers.google.com/books/" target="_blank">Google Developers</a>
+
+</body>
+</html>

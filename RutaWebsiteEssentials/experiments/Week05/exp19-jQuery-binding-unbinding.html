@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <title>jQuery Binding and Unbinding</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="binding-unbinding.js"></script>
+
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        #bindingDiv{
+            border:1px solid;
+            max-width:100px;
+            color:blueviolet;
+            background-color:#d3f2f0;
+            text-align:justify;
+            font-weight:bolder;
+        }
+    </style>
+</head> 
+<body>
+    <h3>jQuery - Binding & Unbinding</h3>
+    <hr />
+
+    <div id="bindingDiv">Click here</div>
+    <br />
+    <div id="contents"></div>
+    <br /><br />
+    <button id="bindBtn" onclick="bind();">bind</button>
+    <button id="unbindBtn" onclick="unbind();">unbind</button>
+
+    <h3>Experiment Description</h3>
+    <hr />
+    <p>
+        This experiment is based on the bind(), unbind() properties of jQuery.
+        Binding is the coupling of an handler to an element, that will run when an event occurs on said element.
+        Unbinding is the de-coupling of an handler from an element, so that when an event occurs the handler function
+        will no longer run.
+    </p>
+
+    <br />
+    <h4>Code Snippet</h4>
+    <hr />
+    <p class="code_snippet">
+        $(&quot;#unbindBtn&quot;).bind(&quot;click&quot;,(function () {<br />
+        $(&apos;#bindingDiv&apos;).unbind(&quot;click&quot;);<br />
+        $(&quot;#contents&quot;).text(&quot;&quot;);<br />
+        }));<br />
+        <br />
+        $(&quot;#bindBtn&quot;).bind(&quot;click&quot;, (function () {<br />
+        $(&quot;#bindingDiv&quot;).bind({<br />
+        click : function(){<br />
+        $(&quot;#contents&quot;).append(&quot;This div is now binded! &quot;);<br />
+        }<br />
+        });<br />
+        }));<br />
+    </p>
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week05/exp19-jQuery-binding-unbinding.html" target="_blank">experiment 19 : jQuery Binding Unbinding - HTML</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week05/binding-unbinding.js" target="_blank">experiment 19 : jQuery Binding Unbinding - Javascript</a>
+
+    <h4>References</h4>
+    <hr />
+    <a href="http://api.jquery.com/unbind/" target="_blank">jQuery Bind/Unbind</a>
+
+</body>
+</html>
