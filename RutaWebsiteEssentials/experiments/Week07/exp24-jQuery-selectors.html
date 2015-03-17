@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Project Preliminaries - jQuery Selectors</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#oddRows").click(function () {
+                $(".elements tr:odd").css("background-color", "#c0d9e6");
+            });
+            $("#evenRows").click(function () {
+                $(".elements tr:even").css("background-color", "#f29fd4");
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        table, td{
+            border:1px solid;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>jQuery Selectors</h3>
+    <hr />
+    <div id="buttons">
+        <button id="evenRows">Change Even Row CSS</button>
+        <button id="oddRows">Change Odd Row CSS</button>
+    </div>
+        <div class="elements">
+            <h5>World Cup Points table:</h5>
+            <table id="my_table">
+                <thead>
+                    <tr>
+                        <td>Team</td>
+                        <td>Played</td>
+                        <td>Won</td>
+                        <td>Lost</td>
+                        <td>Draw</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>India</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>South Africa</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Ireland</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>New Zealand</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Sri Lanka</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <br />
+
+    <h3>Experiment description</h3>
+    <hr />
+    <p>
+        In this experiment, I have used jQuery selectors to apply different CSS for tables DOM element in particular.
+    </p>
+    <br />
+    <h3>Code Snippet</h3>
+    <p>
+        $(document).ready(function () {<br />
+        $(&quot;#oddRows&quot;).click(function () {<br />
+        $(&quot;.elements tr:odd&quot;).css(&quot;background-color&quot;, &quot;#c0d9e6&quot;);<br />
+        });<br />
+        $(&quot;#evenRows&quot;).click(function () {<br />
+        $(&quot;.elements tr:even&quot;).css(&quot;background-color&quot;, &quot;#f29fd4&quot;);<br />
+        });<br />
+        });<br />
+    </p>
+    <br />
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week07/exp24-jQuery-selectors.html" target="_blank">experiment 24 : Project Preliminaries - jQuery Selectors</a>
+    <br />
+    
+    <h3>References</h3>
+    <hr />
+    <a href="http://net4.ccs.neu.edu/home/shrutip/" target="_blank">Fellow students' website</a>
+    <br />
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a>
+    <br />
+</body>
+</html>

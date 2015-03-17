@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Project Preliminaries - Places API</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
+    <script src="location-and-places.js"></script>        
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <h3>Places to Visit Nearby Your Location</h3>
+    <hr />
+    <h3>Your current location is: </h3>
+    <div id="demo"></div>
+    <br />
+    
+    <h3>Experiment description</h3>
+    <hr />
+    <p>
+        In this experiment, I have used Geolocation and Places API to retrieve all places that are nearby the
+        current user location that the user can visit.
+        The result is displayed along with the address of the location.
+    </p>
+    <br />
+    <h3>Code Snippet</h3>
+    <p>
+      $.getJSON(url)<br />
+        .done(function (data) {<br />
+            $.each(data, function (results, search) {<br />
+                $.each(search.items, function (i, content) {<br />
+        <br />
+                    var para = document.createElement(&quot;p&quot;);<br />
+                    var bold = document.createElement(&quot;b&quot;);<br />
+                    var title = document.createTextNode(content.title);<br />
+                    bold.appendChild(title);<br />
+                    var linebreak = document.createElement(&quot;br&quot;);<br />
+                    var vicinity = document.createTextNode(&quot;Address: &quot;+content.vicinity);<br />
+                    para.appendChild(bold);<br />
+                    para.appendChild(linebreak);<br />
+                    para.appendChild(vicinity);<br />
+                    x.appendChild(para);<br />
+                });<br />
+        <br />
+            });<br />
+        });<br />
+    </p>
+    <br />
+    
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week07/exp22-location-and-places.html" target="_blank">experiment 22 : Project Preliminaries - HTML</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/experiments/Week07/location-and-places.js" target="_blank">experiment 22 : Project Preliminaries - JS</a>
+    <br />
+
+    <h3>References</h3>
+    <hr />
+    <a href="https://places.demo.api.here.com/places/static/doc/public/topics/first-request.html" target="_blank">Places API</a>
+    <br />
+    <a href="http://api.jquery.com/jquery.getjson/" target="_blank">jQuery JSON</a>
+
+    
+</body>
+</html>

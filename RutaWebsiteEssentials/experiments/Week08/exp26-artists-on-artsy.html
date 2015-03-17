@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Project Preliminaries - Artsy API</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <script type="text/javascript">
+        function clearContents() {
+            $("#Artistcontents").html("");
+            $("#Artworkcontents").html("");
+        }
+        $(document).ready(function () {
+
+            $("#submitArtist").click(function () {
+
+                clearContents();
+                var artist = "4d8b92b34eb68a1b2c0003f4";
+                var url = "";
+                var url1 = "https://api.artsy.net/api/artists/";
+                var url2 = artist;
+                var url3 = "&Token:";
+                var searchURL = url1 + url2;
+                url = url1 + url2;
+                token = retrieveResults(url);
+
+            });
+
+            function retrieveResults(url) {
+                alert("inside obtainToken()");
+                alert("obtainToken(): url- "+url);
+
+                var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password=ruts25391";
+                $.getJSON(tokenURL, function (result) {
+                    token = result.access_token;
+                    alert("retrieving data token: " + token);
+
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (result) {
+                            document.getElementById("lbl").textContent = token;
+                            alert("success!!");
+                        },
+                        error: function () {
+                            alert("An error has occurred!! Please try again later");
+                        },
+                        fail: function () {
+                            alert("some failure has occurred!! Please try again later");
+                        },
+                        beforeSend: function (jqXHR, settings) {
+                            alert("inside beforeSend");
+                            jqXHR.setRequestHeader("X-Access-Token", token);
+                        }
+                    });
+                });
+                alert(url);
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+
+        .code_snippet {
+            background: white;
+            border: 1px solid;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+
+</head>
+<body>
+    <h3>Artsy API</h3>
+    <hr />
+    <div class="contents">
+        <input id="searchString" type="text" />
+        <button id="submitArtist">Search</button>
+        <label id="lbl"></label>
+        <div id="Artistcontents"></div>
+        <div id="Artworkcontents"></div>
+    </div>
+    <br />
+
+    <h3>Experiment description</h3>
+    <hr />
+    <p>
+        This experiment uses the API that I will be using for my project. The response of the API is a JSON format.
+        I have implemented basic search functionality in this experiment.
+    </p>
+    <br />
+    <h3>Code Snippet</h3>
+    <p>
+        $(document).ready(function () {<br />
+        $(&quot;#oddRows&quot;).click(function () {<br />
+        $(&quot;.elements tr:odd&quot;).css(&quot;background-color&quot;, &quot;#c0d9e6&quot;);<br />
+        });<br />
+        $(&quot;#evenRows&quot;).click(function () {<br />
+        $(&quot;.elements tr:even&quot;).css(&quot;background-color&quot;, &quot;#f29fd4&quot;);<br />
+        });<br />
+        });<br />
+    </p>
+    <br />
+
+    <h4>Source Code</h4>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week07/exp24-jQuery-selectors.html" target="_blank">experiment 24 : Project Preliminaries - jQuery Selectors</a>
+    <br />
+
+    <h3>References</h3>
+    <hr />
+    <a href="http://net4.ccs.neu.edu/home/shrutip/" target="_blank">Fellow students' website</a>
+    <br />
+    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a>
+    <br />
+</body>
+</html>

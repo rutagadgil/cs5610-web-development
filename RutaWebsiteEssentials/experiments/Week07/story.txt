@@ -1,0 +1,4 @@
+﻿../../story/whatisnext.htm?../experiments/Week07/story.txt	What is Next?
+exp22-location-and-places.html								Location and Places to Visit
+exp23-project-preliminaries-museums.html					Art Museums in the vicinity
+exp24-jQuery-selectors.html									jQuery selectors

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Project preliminaries - Artsy API</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            alert("ready!!");
+            var location = "";
+            var x = document.getElementById("demo");
+            
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            
+            function showPosition(position) {
+                x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+                alert(position.coords.latitude);
+            }
+
+            alert("string building");
+            
+            var url1 = "http://places.cit.api.here.com/places/v1/discover/explore?at=";
+            var url2 = "&app_id=E6d3Wfmofr1rYyUCR88r&app_code=KCoseeOnSQiA_i-RiZqsXw&tf=plain";
+
+            var url = url1 + position.coords.latitude + "" + position.coords.longitude + url2;
+            alert("loc"+location);
+            //var url = "http://places.cit.api.here.com/places/v1/discover/explore?at=40.74917,-73.98529&app_id=E6d3Wfmofr1rYyUCR88r&app_code=KCoseeOnSQiA_i-RiZqsXw&tf=plain";
+
+            $.getJSON(url)
+                .done(function (data) {
+                    alert("retieving data");
+                    $.each(data, function (results, search) {
+                        $.each(search.items, function (i, content) {
+                            alert(content.title);
+                            alert(content.distance);
+                        });
+                        
+                    });
+                });
+        });
+    </script>        
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>

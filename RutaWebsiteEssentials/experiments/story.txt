@@ -5,3 +5,5 @@
 ../story/index.htm?../experiments/Week04/					Week 04 - Experiments
 ../story/index.htm?../experiments/Week05/					Week 05 - Experiments
 ../story/index.htm?../experiments/Week06/					Week 06 - Experiments
+../story/index.htm?../experiments/Week07/					Week 07 - Experiments
+../story/index.htm?../experiments/Week08/					Week 08 - Experiments
