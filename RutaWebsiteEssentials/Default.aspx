@@ -20,7 +20,6 @@
         {
             font-size: 100%;
             font-weight: bold;
-            text-align: center;
             list-style: none;
             margin: 0.5em 0;
             padding: 0;
@@ -30,20 +29,20 @@
         {
             display: inline-block;
             padding: 0 0.5%;
-            text-decoration:none;
-            
+            text-decoration:none;            
         }
 
         a
         {
-            color: #08f;
-            font-weight: bold;
-            text-decoration: none;
+            color:#ff6a00;
+            text-transform:uppercase;
+            font-family:Calibri;
+            text-decoration:none;
         }
 
         a:visited
         {
-            color: #88f;
+            color: #ff0000;
         }
 
         a:hover
@@ -63,22 +62,30 @@
         max-width: 100%;
         margin: 0;
         padding: 0;
-        background: url(images/background.jpg);
+        background:url(images/background.jpg);
     }
 
     .pad {
         padding: 10px;
     }
 
+    .wrapper{
+        max-width:100%;
+    }
+
     .picture{
         float:left;
+        max-width:100%;
+        width:20%;
+        height:auto;
         border: 1px solid;
-        border-radius:25px;
-        margin-left:10px;
+        margin-left:3%;
+        margin-right:7%;
     }
 
     p.aboutMe{
         font-family:'Lucida Calligraphy';
+        margin-right:7%;
     }
 
     h2{
@@ -111,23 +118,20 @@
             <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
             <li><a href="blog/" target="_blank">Blog</a></li>
             <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
+            <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Project</a></li>
         </ul>
         <hr />
     </div>
     <div>
         <h2>Ruta Gadgil</h2>
-        <div>
+        <div class="wrapper">
             <img src="images/Ruta Gadgil.jpg" alt="Ruta Gadgil" class="picture" />
+            <p class="aboutMe">
+                Hi! I'm a Computer Science graduate student at Northeastern University.
+                This website is being developed as a part of the Web Development course 
+                under the guidance of Prof. Richard Rasala.
+            </p>
         </div>
-        <p class="aboutMe">
-            <br />
-            <br />
-            Hi! I'm a Computer Science graduate student at Northeastern University.
-            <br />
-            <br />
-            This website is being developed as a part of the Web Development course 
-            under the guidance of Prof. Richard Rasala.
-        </p>
     </div>
 
     <div class="clear"></div>

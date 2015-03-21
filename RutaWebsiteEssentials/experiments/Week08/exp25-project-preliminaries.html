@@ -32,46 +32,89 @@
             });
           
             function retrieveResults(url) {
-                alert("inside obtainToken()");
-                alert("obtainToken(): url- "+url);
-
+                
                 var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password=ruts25391";
                 $.getJSON(tokenURL, function (result) {
                     token = result.access_token;
-                    alert("retrieving data token: " + token);
                     
                     $.ajax({
                         url: url,
                         type: 'GET',
                         dataType: 'json',
                         success: function (result) {
+                            if (result.total_count == 0) {
+                                var text = document.createTextNode("No results match the search criteria. Please try some different search data");
+                                document.getElementById("content").appendChild(text);
+                            }
                             $.each(result._embedded.results, function (i, results) {
-                                if (results.type == "Artist") {
-                                    document.getElementById("Artistcontents").textContent = results.title;
-                                 }
-                                if (results.type == "Artwork") {
-                                    var linebreak = document.createElement("br");
-                                    var para = document.createElement("p");
-                                    var title = document.createTextNode(results.title);
-                                    var anchor = document.createElement("a");
-                                    anchor.setAttribute('href', results._links.permalink.href);
-                                    anchor.innerText = results._links.self.href;
-                                    para.appendChild(title);
-                                    para.appendChild(linebreak);
-                                    para.appendChild(anchor);
+                                switch (results.type) {
+                                    case "Artist":
+                                        alert(token);
+                                        alert(results._links.self.href);
+                                        $.ajax({
+                                            url: results._links.self.href,
+                                            type: 'GET',
+                                            dataType: 'json',
+                                            success: function (result) {
+                                                alert("retrieving data");
+                                            },
+                                            fail: function (result){
+                                                alert("error: " + result.message);
+                                            },
+                                            error: function (result){
+                                                alert("error: " + result.message);
+                                            },
+                                            beforeSend: function (jqXHR, settings) {
+                                                alert("inside beforesend");
+                                                jqXHR.setRequestHeader("X-Access-Token", token);
+                                            }
+                                        });
+                                        var linebreak = document.createElement("br");
+                                        var para = document.createElement("p");
+                                        var artist = document.createElement("a");
+                                        artist.innerText = results.title;
+                                        artist.setAttribute('href', results._links.permalink.href);
+                                        artist.setAttribute('target', '_blank');
+                                        para.appendChild(artist);
+                                        para.appendChild(linebreak);
+                                        document.getElementById("Artistcontents").appendChild(para);
+                                        break;
 
-                                    document.getElementById("Artworkcontents").appendChild(para);
-                                 }
+                                    case "Profile":
+                                        var linebreak = document.createElement("br");
+                                        var para = document.createElement("p");
+                                        var artist = document.createElement("a");
+                                        artist.innerText = results.title;
+                                        artist.setAttribute('href', results._links.permalink.href);
+                                        artist.setAttribute('target', '_blank');
+                                        para.appendChild(artist);
+                                        para.appendChild(linebreak);
+                                        document.getElementById("Artistcontents").appendChild(para);
+                                        break;
+
+                                    default:
+                                        var para = document.createElement("p");
+                                        if (results._links.thumbnail.href != "/images/icon-152.png") {
+                                            var linebreak = document.createElement("br");
+                                            var title = document.createTextNode(results.title);
+                                            var img = document.createElement("img");
+                                            img.setAttribute('src', results._links.thumbnail.href);
+                                            para.appendChild(title);
+                                            para.appendChild(linebreak);
+                                            para.appendChild(img);
+                                        }
+                                        document.getElementById("Artworkcontents").appendChild(para);
+                                        break;
+                                }
                             });
                         },
                         error: function () {
                             alert("An error has occurred!! Please try again later");
                         },
                         fail: function () {
-                            alert("some failure has occurred!! Please try again later");
+                            alert("Some failure has occurred!! Please try again later");
                         },
                         beforeSend: function (jqXHR, settings) {
-                            alert("inside beforeSend");
                             jqXHR.setRequestHeader("X-Access-Token", token);
                         }
                     });
@@ -82,38 +125,41 @@
     </script>
 
     <style>
-        body {
-            background-color: bisque;
-            font-family: 'Papyrus';
-            font-size: large;
-        }
 
         .code_snippet {
             background: white;
             border: 1px solid;
             font-family: 'Times New Roman', Times, serif;
         }
-
+        .contents{
+            margin-left:30%;
+        }
+        .contents img{
+            width:100%;
+            max-width:50%;
+            height:auto;
+            max-height:400px;
+        }
     </style>
 
 </head>
 <body>
     <h3>Artsy API</h3>
     <hr />
-    <div class="contents">
-        <input id="searchString" type="text" />
-        <button id="submitArtist">Search</button>
-        <label id="lbl"></label>
-        <div id="Artistcontents"></div>
-        <div id="Artworkcontents"></div>
+    <input id="searchString" type="text" />
+    <button id="submitArtist">Search</button>
+    <div id="content">
+        <div id="Artistcontents" class="contents"></div>
+        <div id="Artworkcontents" class="contents"></div>
     </div>
     <br />
-
     <h3>Experiment description</h3>
-    <hr />
+    <hr />  
     <p>
         This experiment uses the API that I will be using for my project. The response of the API is a JSON format.
-        I have implemented basic search functionality in this experiment.
+        I have implemented basic search functionality in this experiment. The search results are of five types 
+        viz. Artist, Artwork, Profile, Gene and Show. Out of these five types, I have displayed the images for Artwork, Gene and Show.
+        For the rest, I have provided a link to an external location on the artsy.net website.
     </p>
     <br />
     <h3>Code Snippet</h3>
@@ -136,9 +182,7 @@
 
     <h3>References</h3>
     <hr />
-    <a href="http://net4.ccs.neu.edu/home/shrutip/" target="_blank">Fellow students' website</a>
-    <br />
-    <a href="http://www.w3schools.com/" target="_blank">W3Schools</a>
+    <a href="https://developers.artsy.net/docs" target="_blank">ARTSY Developers</a>
     <br />
 </body>
 </html>

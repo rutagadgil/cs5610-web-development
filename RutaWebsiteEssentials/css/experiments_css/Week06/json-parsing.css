@@ -1,0 +1,24 @@
+﻿#booksTBL{
+            background-color:#cbf8ed;
+        }
+        #booksTBL td{
+            border:1px solid black;
+            width:200px;
+            text-align:center;
+        }
+
+        #booksTBL thead{
+            border:1px solid black;
+            font-weight:bold;
+            color:black;
+        }
+        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
