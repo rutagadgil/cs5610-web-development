@@ -1,4 +1,3 @@
 ﻿../../story/whatisnext.htm?../experiments/Week08/story.txt	What is Next?
-exp25-project-preliminaries.html							Artsy API - Random Search
-exp26-artists-on-artsy.html									Artsy API - Artist Search
-exp27-artwork-of-artists.html								Artsy API - Artwork Search
+exp25-artsy-search.html									Artsy API - Search
+exp26-artists-on-artsy.html								Artsy API - Artist Search

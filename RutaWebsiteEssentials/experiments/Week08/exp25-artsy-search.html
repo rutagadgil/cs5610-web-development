@@ -10,27 +10,26 @@
 
     <link rel="icon" href="../../images/paint-icon1.ico" />
 
-    <script type="text/javascript" src="../../javascript/experiments_javascript/Week08/artist-on-artsy.js"></script>
+    <script type="text/javascript" src="../../javascript/experiments_javascript/Week08/artsy-search.js"></script>
 
     <style>
-        body {
-            font-family: 'Papyrus';
-            font-size: large;
-        }
-
         .code_snippet {
             background: white;
             border: 1px solid;
             font-family: 'Times New Roman', Times, serif;
         }
-
-        #data{
+        body {
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .contents{
             margin-left:30%;
         }
-        #data img{
+        .contents img{
             width:100%;
             max-width:50%;
             height:auto;
+            max-height:400px;
         }
     </style>
 
@@ -38,21 +37,24 @@
 <body>
     <h3>Artsy API</h3>
     <hr />
-    <div class="contents">
-        <button id="submitArtist">Click here for details and artworks of Leonardo Da Vinci</button>
-        <div id="data"></div>
+    <input id="searchString" type="text" />
+    <button id="submitArtist">Search</button>
+    <div id="content">
+        <div id="Artistcontents" class="contents"></div>
+        <div id="Artworkcontents" class="contents"></div>
     </div>
     <br />
-
     <h3>Experiment description</h3>
-    <hr />
+    <hr />  
     <p>
-        In this experiment I have displayed the artists' details as well as the artwork associated with that artist.
-        This experiment has a hardcoded value for the artist. In the project this will be generated dynamically based on
-        the user input.
+        This experiment uses the API that I will be using for my project. The response of the API is a JSON format.
+        I have implemented basic search functionality in this experiment. The search results are of five types 
+        viz. Artist, Artwork, Profile, Gene and Show. Out of these five types, I have displayed the images for Artwork, Gene and Show.
+        For the rest, I have provided a link to an external location on the artsy.net website.
     </p>
     <br />
     <h3>Code Snippet</h3>
+    <hr />
     <p class="code_snippet">
         $.getJSON(tokenURL, function (result) {<br />
         token = result.access_token;<br />
@@ -80,16 +82,14 @@
 
     <h3>Source Code</h3>
     <hr />
-    <a href="../../fileview/Default.aspx?~/experiments/Week08/exp26-artists-on-artsy.html" target="_blank">experiment 26 : Project Preliminaries - Artist Details</a>
+    <a href="../../fileview/Default.aspx?~/experiments/Week08/exp25-artsy-search.html" target="_blank">experiment 25 : Project Preliminaries - Artsy Search</a>
     <br />
-    <a href="../../fileview/Default.aspx?~/javascript/experiments_javascript/Week08/artist-on-artsy.js" target="_blank">experiment 26 : Project Preliminaries - Artist Details - Javascript</a>
+    <a href="../../fileview/Default.aspx?~/javascript/experiments_javascript/Week08/artsy-search.js" target="_blank">experiment 25 : Project Preliminaries - Artsy Search - Javascript</a>
     <br />
 
     <h3>References</h3>
     <hr />
-    <a href="https://developers.artsy.net/docs/artworks" target="_blank">Artsy API - artworks</a>
-    <br />
-    <a href="https://developers.artsy.net/docs/artists" target="_blank">Artsy API - artists</a>
+    <a href="https://developers.artsy.net/docs" target="_blank">ARTSY Developers</a>
     <br />
 </body>
 </html>
