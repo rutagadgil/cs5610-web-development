@@ -1,0 +1,81 @@
+﻿        /*background images*/
+        img{
+            border:1px solid black;
+            max-width:100%;
+        }
+        /*image slide show*/
+        .fadein {
+            margin-top:2%;
+            position:relative; 
+            width:100%; 
+            height:auto; 
+        }
+        .fadein img { 
+            position:absolute; 
+            left:0;
+            top:0; 
+        }
+        /*navigation bar*/
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color:black;
+            overflow: hidden;
+        }
+        #navbar li {
+            float: left;
+            font-family:Papyrus;
+            font-weight:bold;
+            width:25%;
+            font-size:20px;
+        }
+        #navbar a:hover {
+            color:white;
+            background-color:black;
+        }
+        #navbar li ul{
+            position: absolute;
+            z-index: 100;
+            background-color:black;
+            color:#adf59c;
+            display:none;
+            
+        }
+        #navbar li:hover ul{
+            display:block;
+        }
+        #navbar li ul li{
+            clear:both;
+            display:block;
+        }
+        #navbar a:link,#navbar a:visited {
+            display: block;
+            width: 150px;
+            height: 30px;
+            background-color: black;
+            color:#adf59c;
+            text-decoration:none;
+            text-align:center;
+        }
+        /*welcome text animation*/
+        .animation{
+            border:none;
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            max-height:100px;
+        }
+        body{
+            background-color:#adf59c;
+        }
+        footer{
+            width:100%;
+            overflow:hidden;
+            position:absolute;
+            left:0;
+            bottom:0;
+            height:50px;
+            color:white;
+            background:black;
+        }

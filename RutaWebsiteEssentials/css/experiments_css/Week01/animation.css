@@ -1,0 +1,47 @@
+﻿        body {
+            background-color: bisque;
+            font-family: Papyrus;
+            font-weight:bold;
+            font-size:large;
+        }
+        h3 {
+            font-family: Papyrus;
+        }
+        p{
+            font-family:Papyrus;
+            font-weight:500;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            -webkit-animation: myanimation 10s infinite;
+        }
+
+        @-webkit-keyframes myanimation {
+            from {
+                width: 100px;
+                height: 100px;
+                left: 100px;
+                background: red;
+                -webkit-transform: rotate(0deg);
+                -ms-transform:rotate(0deg);
+                -moz-transform:rotate(0deg);
+                transform:rotate(0deg);
+            }
+            to {
+                width: 10px;
+                height: 10px;
+                left: 650px;
+                background: blue;
+                -webkit-transform: rotate(360deg); 
+                -ms-transform:rotate(360deg);
+                -moz-transform:rotate(360deg);
+                transform:rotate(360deg);
+            }
+        }

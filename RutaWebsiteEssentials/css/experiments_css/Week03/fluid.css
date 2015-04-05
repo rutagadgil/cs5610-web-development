@@ -1,0 +1,28 @@
+﻿        body {
+            background-color: bisque;
+            font-family: 'Papyrus';
+            font-size: large;
+        }
+        .part{
+            width:31%;
+            margin-left:2%;
+            float:left;
+            text-align:justify;
+        }
+        .center{
+            text-align:center;
+            color:bisque;
+            background-color:palevioletred;
+        }        
+        .image{
+            max-width:100%;
+            height:auto;
+        }
+        .code_snippet{
+            background:white;
+            border:1px solid;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .clear{
+            clear:both;
+        }

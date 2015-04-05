@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <title>Displaying Artworks - ARTSY API</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="../../javascript/experiments_javascript/Week09/retrieving-data-from-next-links.js"></script>
+
+    <link rel="icon" href="../../images/paint-icon1.ico" />
+
+    <link rel="stylesheet" href="../../css/experiments_css/Week09/retreiving-data-from-next-links.css" />
+</head>
+<body>
+    <div id="Artworkcontents"></div>
+    <div id="displayDetails">
+        <i>Click on a artwork to get its details.</i>
+    </div>
+    <div id="ArtworkDetails"></div>
+    <h3 class="expDetails">Experiment description</h3>
+    <hr />
+    <p>
+        This is an extension to last weeks experiment. 
+        Here I have assigned event handlers to dynamically created DOM elements.
+        When user clicks on any image, the div on the right is populated with description of this image.
+        Also I have increased the number of paintings retrieved. The page now consists of 35 paintings.
+    </p>
+    <br />
+    <h3>Code Snippet</h3>
+    <p class="code_snippet">
+        success: function loadresults(result) {<br />
+        if (count &lt; 5) {<br />
+        count++;<br />
+        $.each(result._embedded.artworks, function (i, artworks) {<br />
+        i++;<br />
+        var artwork_image = artworks._links.thumbnail.href;<br />
+        $.ajax({<br />
+        url: result._links.next.href,<br />
+        type: &apos;GET&apos;,<br />
+        cache: false,<br />
+        datatype: &apos;json&apos;,<br />
+        success: function (result) {<br />
+        loadresults(result);<br />
+        },<br />
+        error: function () {<br />
+        alert(&quot;An error has occurred!! Please try again later&quot;);<br />
+        },<br />
+        beforeSend: function (jqXHR, settings) {<br />
+        jqXHR.setRequestHeader(&quot;X-Access-Token&quot;, token);<br />
+        }<br />
+        });<br />
+    </p>
+    <br />
+
+    <h3>Source Code</h3>
+    <hr />
+    <a href="../../fileview/Default.aspx?~/experiments/Week09/exp27-displaying-artworks.html" target="_blank">experiment 27 : Project Preliminaries - Displaying Artwork</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/javascript/experiments_javascript/Week09/retrieving-data-from-next-links.js" target="_blank">experiment 27 : Project Preliminaries - Displaying Artwork - Javascript</a>
+    <br />
+    <a href="../../fileview/Default.aspx?~/css/experiments_css/Week09/retreiving-data-from-next-links.css" target="_blank">experiment 27 : Project Preliminaries - Displaying Artwork - CSS</a>
+    <br />
+
+    <h3>References</h3>
+    <hr />
+    <a href="https://developers.artsy.net/docs/artworks" target="_blank">Artsy API - artworks</a>
+    <br />
+    <a href="https://developers.artsy.net/docs/artists" target="_blank">Artsy API - artists</a>
+    <br />
+
+</body>
+</html>

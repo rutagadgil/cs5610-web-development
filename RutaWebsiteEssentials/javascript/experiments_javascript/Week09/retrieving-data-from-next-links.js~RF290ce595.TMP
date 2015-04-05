@@ -1,0 +1,111 @@
+﻿$(document).ready(function () {
+
+    var i = 0;
+    var url = "https://api.artsy.net/api/artworks";
+
+    $.when(retrieveResults(url))
+    .done(function () {
+        //alert("done retrieving results");
+    })
+    .fail(function () {
+        //alert("Could not retrive any artwork!!");
+    });
+    //$("#ArtworkDetails").hide();
+});
+function displayDetails(id) {
+    var artworkDetails = id;
+    var elementId = parseInt(artworkDetails.id.substring(12));
+    alert(elementId);
+    var displayArtwork = "#artDetails" + elementId;
+    alert(displayArtwork);
+    document.getElementById(displayArtwork).style.visibility = "visible";
+}
+function retrieveResults(url) {
+    var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password=ruts25391";
+    var count = 0;
+    $.getJSON(tokenURL, function (result) {
+        token = result.access_token;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            cache: false,
+            dataType: 'json',
+            success: function loadresults(result) {
+                if (count < 5) {
+                    count++;
+                    $.each(result._embedded.artworks, function (i, artworks) {
+                        i++;
+                        var artwork_image = artworks._links.thumbnail.href;
+                        var artwork_image_url = artwork_image.replace("medium", "square");
+                        var li = document.createElement("li");
+                        li.setAttribute('id', "imageDetails" + count + i);
+
+                        var img = document.createElement("img");
+                        img.setAttribute('src', artwork_image_url);
+                        li.appendChild(img);
+                        document.getElementById("Artworkcontents").appendChild(li);
+
+                        $('#imageDetails' + count + i).on("click", function () {
+                            displayDetails(this);
+                        });
+                        var artworkDetailsDiv = document.createElement("div");
+                        var linebreak = document.createElement("br");
+                        artworkDetailsDiv.setAttribute('id', "artDetails" + count + i);
+                        var titlePara = document.createElement("p");
+                        var title = document.createTextNode(artworks.title);
+                        titlePara.appendChild(title);
+                        artworkDetailsDiv.appendChild(titlePara);
+                        artworkDetailsDiv.appendChild(linebreak);
+                        artworkDetailsDiv.style.visibility = "hidden";
+                        document.getElementById("ArtworkDetails").appendChild(artworkDetailsDiv);
+                    });
+                    $.ajax({
+                        url: result._links.next.href,
+                        type: 'GET',
+                        cache: false,
+                        datatype: 'json',
+                        success: function (result) {
+                            loadresults(result);
+                        },
+                        error: function () {
+                            alert("An error has occurred!! Please try again later");
+                        },
+                        beforeSend: function (jqXHR, settings) {
+                            jqXHR.setRequestHeader("X-Access-Token", token);
+                        }
+                    });
+                }
+            },
+            error: function () {
+                alert("An error has occurred!! Please try again later");
+            },
+            fail: function () {
+                alert("Some failure has occurred!! Please try again later");
+            },
+            beforeSend: function (jqXHR, settings) {
+                jqXHR.setRequestHeader("X-Access-Token", token);
+            },
+        });
+    });
+
+    $("img[id^=imageDetails]").click(function (event) {
+        var id = parseInt(this.id.substring(12)); // strip "li", convert to int.
+        alert("inside click event");
+        //var win = window.open("images/FT/Page" + id + ".jpg", '_blank');
+        //win.focus();
+    });
+
+}
+$("img[id^=imageDetails]").click(function (event) {
+    var id = parseInt(this.id.substring(12)); // strip "li", convert to int.
+    alert("inside click event");
+    //var win = window.open("images/FT/Page" + id + ".jpg", '_blank');
+    //win.focus();
+});
+
+$("#ArtworkContents").click(function (event) {
+    var id = parseInt(this.id.substring(12)); // strip "li", convert to int.
+    alert("inside click event");
+    //var win = window.open("images/FT/Page" + id + ".jpg", '_blank');
+    //win.focus();
+});

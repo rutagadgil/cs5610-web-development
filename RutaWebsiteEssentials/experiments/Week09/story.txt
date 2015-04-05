@@ -1,0 +1,2 @@
+﻿../../story/whatisnext.htm?../experiments/Week09/story.txt	What is Next?
+exp27-displaying-artworks.html                              Displaying Artworks

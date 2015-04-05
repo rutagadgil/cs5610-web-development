@@ -36,7 +36,7 @@
         {
             color:#ff6a00;
             text-transform:uppercase;
-            font-family:Calibri;
+            font-family:Cambria;
             text-decoration:none;
         }
 
@@ -47,7 +47,12 @@
 
         a:hover
         {
-            color: #f00;
+            color: white;
+            border:outset;
+            border-width:1px;
+            border-radius:5px;
+            border-spacing:10px;
+            background-color:black;
         }
 
         p
@@ -84,12 +89,13 @@
     }
 
     p.aboutMe{
-        font-family:'Lucida Calligraphy';
+        font-family:'Cambria Math';
         margin-right:7%;
     }
 
     h2{
         font-family:Papyrus;
+        margin-left:35%;
     }
 
     .clear{
@@ -118,7 +124,7 @@
             <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
             <li><a href="blog/" target="_blank">Blog</a></li>
             <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
-            <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Project</a></li>
+            <li><a href="project/Home.html" target="_blank">Project</a></li>
         </ul>
         <hr />
     </div>

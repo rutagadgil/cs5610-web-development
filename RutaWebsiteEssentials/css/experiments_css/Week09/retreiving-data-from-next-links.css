@@ -1,0 +1,37 @@
+﻿    #Artworkcontents img{
+            float:left;
+            margin-left:2%;
+            margin-bottom:2%;
+            max-width:30%;
+            border:1px solid white;
+        }
+        #Artworkcontents{
+            margin-left:2%;
+            margin-right:5%;            
+            max-width:55%;
+            max-height:600px;
+            cursor:pointer;
+            overflow:scroll;
+        }
+        #displayDetails{
+            margin-top:-550px;
+            border:1px solid white;
+            margin-left:65%;
+            max-width:30%;
+            margin-right:5%;
+        }
+        #displayDetails img{
+            max-width:95%;
+            margin:2%;
+        }
+        .expDetails{
+            margin-top:600px;
+        }
+        body{
+            background-color:#010110;
+            color:white;
+            max-width:100%;
+        }
+        #Artworkcontents li{
+            list-style:none;
+        }
