@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
     var i = 0;
-    var url = "https://api.artsy.net/api/artworks";
+    var url = "https://api.artsy.net/api/artworks?gene_id=51b662d08b3b81ec27000289";
 
     $.when(retrieveResults(url))
     .done(function () {

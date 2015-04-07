@@ -5,7 +5,6 @@
         }
         /*image slide show*/
         .fadein {
-            margin-top:2%;
             position:relative; 
             width:100%; 
             height:auto; 
@@ -27,7 +26,6 @@
             float: left;
             font-family:Papyrus;
             font-weight:bold;
-            width:25%;
             font-size:20px;
         }
         #navbar a:hover {
@@ -68,8 +66,10 @@
         }
         body{
             background-color:#adf59c;
+            max-width:920px;
         }
         footer{
+            max-width:930px;
             width:100%;
             overflow:hidden;
             position:absolute;

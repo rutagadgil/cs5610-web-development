@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, minimum-scale=1">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link rel="icon" href="../images/paint-icon1.ico" />
+
+    <script type="text/javascript">
+        function clearContents() {
+            $("#Artistcontents").html("");
+            $("#Artworkcontents").html("");
+        }
+
+        $(document).ready(function () {
+
+            var url = "";
+            var url1 = "https://api.artsy.net/api/search?q=";
+            var url3 = "&Token:";
+            var key = "../getkey.aspx?apikey";
+            var passwd;
+
+            $(document).keypress(function (e) {
+                if (e.which == 13) {
+                    alert('You pressed enter!');
+                    clearContents();
+                    generateURL();
+                }
+            });
+            
+            $("#submitArtist").click(function () {
+                alert("button click function");
+                clearContents();
+                generateURL();
+            });
+            function generateURL() {
+                alert("inside generateURL");
+                var artist = document.getElementById("searchString").value;
+                var url2 = artist;
+                var url3 = "&Token:";
+                url = url1 + url2 + url3;
+
+                var getmy_key_result = $.ajax(key);
+                getmy_key_result.fail(ErrorGettingKey);
+                getmy_key_result.done(getkey);
+            }
+
+            function getkey(result) {
+                passwd = result;
+                alert(passwd);
+                token = retrieveResults(url, passwd);
+            }
+
+            function ErrorGettingKey() {
+                alert("Error getting API key!")
+            }
+            function retrieveResults(url, passwd) {
+                var count = 0;
+                var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password="+passwd;
+                $.getJSON(tokenURL, function (result) {
+                    token = result.access_token;
+                    $.ajax({
+                        url: url,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function loadresults(result) {
+                            if (count < 7) {
+                                count++;
+                                if (result.total_count == 0) {
+                                    var text = document.createTextNode("No results match the search criteria. Please ensure you have entered correct spelling");
+                                    document.getElementById("content").appendChild(text);
+                                }
+                                $.each(result._embedded.results, function (i, results) {
+                                    switch (results.type) {
+                                        case "Artist":
+                                            var linebreak = document.createElement("br");
+                                            var para = document.createElement("p");
+                                            var artist = document.createElement("a");
+                                            artist.innerText = results.title;
+                                            artist.setAttribute('href', results._links.permalink.href);
+                                            artist.setAttribute('target', '_blank');
+                                            para.appendChild(artist);
+                                            para.appendChild(linebreak);
+                                            document.getElementById("Artist").appendChild(para); break;
+
+                                        case "Profile":
+                                            var linebreak = document.createElement("br");
+                                            var para = document.createElement("p");
+                                            var artist = document.createElement("a");
+                                            artist.innerText = results.title;
+                                            artist.setAttribute('href', results._links.permalink.href);
+                                            artist.setAttribute('target', '_blank');
+                                            para.appendChild(artist);
+                                            para.appendChild(linebreak);
+                                            document.getElementById("Profile").appendChild(para);
+                                            break;
+
+                                        case "Artwork":
+                                            //alert("artwork found!!");
+                                            var para = document.createElement("p");
+                                            para.setAttribute('class', 'artworkpara');
+                                            if (results._links.thumbnail.href != "/images/icon-152.png") {
+                                                var linebreak = document.createElement("br");
+                                                var description = document.createElement("p");
+                                                var desc = document.createTextNode(results.description);
+                                                var img = document.createElement("img");
+                                                img.setAttribute('src', results._links.thumbnail.href);
+                                                description.appendChild(desc);
+                                                para.appendChild(description);
+                                                para.appendChild(linebreak);
+                                                para.appendChild(img);
+                                            }
+                                            document.getElementById("Artwork").appendChild(para);
+                                            break;
+
+                                        case "Gene":
+                                            var para = document.createElement("p");
+                                            if (results._links.thumbnail.href != "/images/icon-152.png") {
+                                                var linebreak = document.createElement("br");
+                                                var title = document.createTextNode(results.title);
+                                                var img = document.createElement("img");
+                                                img.setAttribute('src', results._links.thumbnail.href);
+                                                para.appendChild(title);
+                                                para.appendChild(linebreak);
+                                                para.appendChild(img);
+                                            }
+                                            var href = document.createTextNode(results._links.self.href);
+                                            para.appendChild(href);
+                                            document.getElementById("Gene").appendChild(para);
+                                            break;
+
+                                        case "Show":
+                                            var para = document.createElement("p");
+                                            if (results._links.thumbnail.href != "/images/icon-152.png") {
+                                                var linebreak = document.createElement("br");
+                                                var title = document.createTextNode(results.title);
+                                                var img = document.createElement("img");
+                                                img.setAttribute('src', results._links.thumbnail.href);
+                                                para.appendChild(title);
+                                                para.appendChild(linebreak);
+                                                para.appendChild(img);
+                                            }
+                                            document.getElementById("Show").appendChild(para);
+                                            break;
+                                        default:
+                                            var para = document.createElement("p");
+                                            var linebreak = document.createElement("br");
+                                            //var title = document.createTextNode(results.title);
+                                            var img = document.createElement("img");
+                                            img.setAttribute('src', results._links.thumbnail.href);
+                                            //para.appendChild(title);
+                                            para.appendChild(linebreak);
+                                            para.appendChild(img);
+                                            document.getElementById("Other").appendChild(para);
+                                            break;
+                                    }
+                                });
+                                $.ajax({
+                                    url: result._links.next.href,
+                                    type: 'GET',
+                                    cache: false,
+                                    datatype: 'json',
+                                    success: function (result) {
+                                        loadresults(result);
+                                    },
+                                    error: function () {
+                                        alert("An error has occurred!! Please try again later");
+                                    },
+                                    beforeSend: function (jqXHR, settings) {
+                                        jqXHR.setRequestHeader("X-Access-Token", token);
+                                    }
+                                });
+                            }
+                        },
+                        error: function () {
+                            alert("An error has occurred!! Please try again later");
+                        },
+                        fail: function () {
+                            alert("Some failure has occurred!! Please try again later");
+                        },
+                        beforeSend: function (jqXHR, settings) {
+                            jqXHR.setRequestHeader("X-Access-Token", token);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    <style>
+        #Artist{
+            
+        }
+        #Artwork{
+            max-height:300px;
+            overflow:scroll;
+        }
+        #Artwork img{
+            max-width:100%;
+            max-height:150px;
+        }
+        #Artwork img:hover{
+            max-width:100%;
+            max-height:150px;
+            opacity:0.4;
+        }
+        .artworkpara{
+            margin-right:1%;
+        }
+    </style>
+    <title>Fine Arts World - Search</title></head>
+    
+<body>
+    <input id="searchString" type="text" autofocus/>
+    <button id="submitArtist">Search</button>
+    <div id="content">
+        <div id="Artist" class="contents">
+            <h3>Artists</h3>
+        </div>
+        <div id="Artwork" class="contents">
+            <h3>Artworks</h3>
+        </div>
+        <div id="Profile" class="contents">
+            <h3>Profiles</h3>
+        </div>
+        <div id="Gene" class="contents">
+            <h3>Genes</h3>
+        </div>
+        <div id="Show" class="contents">
+            <h3>Shows</h3>
+        </div>
+        <div id="Other" class="contents">
+            <h3>Others</h3>
+        </div>
+    </div>
+</body>
+</html>
