@@ -224,6 +224,29 @@ function displayDetails(id) {
     document.getElementById("displayDetails").appendChild(detailedArtwork);
 }
 
+function determineArtist(url) {
+    var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password=" + passwd;
+    var count = 0;
+    alert("inside determine artist");
+    $.getJSON(tokenURL, function (result) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            cache: false,
+            dataType: 'json',
+            success: function loadresults(result) {
+                alert("retrieving data artist name: ");
+                alert(result);
+            },
+            error: function () {
+                alert("An error has occurred!! Please try again later");
+            },
+            beforeSend: function (jqXHR, settings) {
+                jqXHR.setRequestHeader("X-Access-Token", token);
+            }
+        });
+    });
+}
 function retrieveResults(url, passwd) {
     //alert("inside retrieve results");
     //alert("password:"+passwd);
@@ -270,6 +293,7 @@ function retrieveResults(url, passwd) {
                             var institutionPara = document.createElement("p");
                             var collecting_institution = document.createTextNode("\nCollecting Institution: " + artworks.collecting_institution);
                             var painting = document.createElement("img");
+                            var artist = determineArtist(artworks._links.artists.href);
                             painting.setAttribute('src', artworks._links.thumbnail.href);
                             titlePara.appendChild(title);
                             categoryPara.appendChild(category);
