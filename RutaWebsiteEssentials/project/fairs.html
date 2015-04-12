@@ -7,9 +7,11 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="icon" href="../images/paint-icon1.ico" />
 
-    <title>Fine Arts World - Artist</title>
-    <script src="../javascript/project/artist.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/project/artist.css">
+    <link rel="stylesheet" href="../css/project/fairs.css" />
+    <script src="../javascript/project/fairs.js">
+
+    </script>
+    <title>Fine Arts World - Fairs</title>
 </head>
 <body>
     <div id="navbar">
@@ -34,14 +36,14 @@
         </ul>
     </div>
     <br />
-    <input id="searchString" type="text" autofocus />
-    <button id="submitArtist">Search</button>
-
-    <div class="contents">
-        <div id="allArtists"></div>
-        <!--<button id="submitArtist">Click here for details and artworks of Leonardo Da Vinci</button>-->
-        <div id="data"></div>
-        <div id="debug"></div>
+    <br />
+    <div>
+        <label><input type="radio" id="fairselection" name="fairselection" value="current" checked>Current Fairs</label>
+        <label><input type="radio" id="fairselection" name="fairselection" value="running">Running Fairs</label>
+        <label><input type="radio" id="fairselection" name="fairselection" value="upcoming">Upcoming Fairs</label>
+        <label><input type="radio" id="fairselection" name="fairselection" value="closed">Closed Fairs</label>
     </div>
+    <h2 id="fairStatus"></h2>
+    <div id="data"></div>
 </body>
 </html>

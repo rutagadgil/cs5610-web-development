@@ -5,145 +5,36 @@
     <meta name="viewport" content="initial-scale=1, minimum-scale=1">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
     <link rel="icon" href="../images/paint-icon1.ico" />
-    <style>
-            #Artworkcontents img{
-            float:left;
-            margin-left:2%;
-            margin-bottom:2%;
-            max-width:30%;
-            border:1px solid white;
-        }
-        #Artworkcontents{
-            margin-top:3%;
-            margin-left:2%;
-            margin-right:5%;            
-            max-width:65%;
-            max-height:600px;
-            cursor:pointer;
-            overflow-y:scroll;
-        }
-        #displayDetails{
-            margin-top:-550px;
-            border:1px solid white;
-            margin-left:70%;
-            max-width:30%;
-            margin-right:5%;
-        }
-        #displayDetails img{
-            max-width:95%;
-            margin:2%;
-        }
-        .expDetails{
-            margin-top:600px;
-        }
-        body{
-            /*background-color:#adf59c;*/
-            background-color:#0b3446;
-            color:white;
-            max-width:100%;
-        }
-        #Artworkcontents li{
-            list-style:none;
-        }
-        #searchString{
-            margin-right:5%;
-            float:right;
-        }
-        #submitArtist{
-            margin-right:1%;
-            float:right;
-        }
-        /*navigation bar*/
-        #navbar ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color:#2a2929;
-            overflow: hidden;
-        }
-        #navbar li {
-            float: left;
-            font-family:Papyrus;
-            font-weight:bold;
-            font-size:20px;
-        }
-        #navbar a:hover {
-            color:white;
-            background-color:#2a2929;
-        }
-        #navbar li ul{
-            position: absolute;
-            z-index: 100;
-            background-color:#2a2929;
-            color:#adf59c;
-            display:none;
-        }
-        #navbar li:hover ul{
-            display:block;
-        }
-        #navbar li ul li{
-            clear:both;
-            display:block;
-        }
-        #navbar a:link, #navbar a:visited {
-            display: block;
-            width: 150px;
-            height: 30px;
-            background-color:#2a2929;
-            color:#adf59c;
-            text-decoration:none;
-            text-align:center;
-        }
-        #displayDetails{
-            font-style:italic;
-        }
-        footer{
-            overflow:hidden;
-            position:absolute;
-            left:0;
-            bottom:0;
-            width:100%;
-            color:#adf59c;
-            background:#2a2929;
-            display:block;
-            margin-left:auto;
-            margin-right:auto;
-            text-align:center;
-        }
-        footer a{
-            color:#ff6a00;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/project/artwork.css" />
+    
     <script src="../javascript/project/artwork.js"></script>
     <title>Fine Arts World - Artwork</title>
 </head>
 <body>
     <div id="navbar">
         <ul>
-            <li><a href="Home.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li>
                 <a href="#search">Search</a>
                 <ul>
-                    <li><a href="Artist.html">Artist</a></li>
-                    <li><a href="Artwork.html">Artwork</a></li>
-                    <li><a href="Search.html">Not Sure..</a></li>
+                    <li><a href="artist.html">Artist</a></li>
+                    <li><a href="artwork.html">Artwork</a></li>
+                    <li><a href="search.html">Not Sure..</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#shows">Shows & Fairs</a>
                 <ul>
                     <li><a href="#shows">Shows</a></li>
-                    <li><a href="#fairs">Fairs</a></li>
+                    <li><a href="fairs.html">Fairs</a></li>
                 </ul>
             </li>
-            <li><a href="About.html">About</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </div>
     <br />
-        Select Category <input id="searchString" type="text" />
-        <button id="submitArtist">Search</button>
-
         <select id="dropdownlist" onchange="changeDisplay();">
             <option value="arthistory">Iconic works of Art History</option>
             <option value="grand">Grand</option>

@@ -1,4 +1,51 @@
-﻿/*navigation bar*/
+﻿#Artworkcontents img{
+            float:left;
+            margin-left:2%;
+            margin-bottom:2%;
+            max-width:30%;
+            border:1px solid white;
+        }
+        #Artworkcontents{
+            margin-top:3%;
+            margin-left:2%;
+            margin-right:5%;            
+            max-width:65%;
+            max-height:600px;
+            cursor:pointer;
+            overflow-y:scroll;
+        }
+        #displayDetails{
+            margin-top:-550px;
+            border:1px solid white;
+            margin-left:70%;
+            max-width:30%;
+            margin-right:5%;
+        }
+        #displayDetails img{
+            max-width:95%;
+            margin:2%;
+        }
+        .expDetails{
+            margin-top:600px;
+        }
+        body{
+            /*background-color:#adf59c;*/
+            background-color:#0b3446;
+            color:white;
+            max-width:100%;
+        }
+        #Artworkcontents li{
+            list-style:none;
+        }
+        #searchString{
+            margin-right:5%;
+            float:right;
+        }
+        #submitArtist{
+            margin-right:1%;
+            float:right;
+        }
+        /*navigation bar*/
         #navbar ul {
             list-style-type: none;
             margin: 0;
@@ -39,14 +86,10 @@
             text-decoration:none;
             text-align:center;
         }
-        body {
-            background-color:#0b3446;
-            color:#adf59c;
-            text-align:justify;
+        #displayDetails{
+            font-style:italic;
         }
-        /*footer specifications*/
         footer{
-            margin:1%;
             overflow:hidden;
             position:absolute;
             left:0;
@@ -61,27 +104,4 @@
         }
         footer a{
             color:#ff6a00;
-        }
-        /*Text styling*/
-        .content img{
-            float:left;
-            max-width:50%;
-            margin-right:3%;
-            opacity:1;
-            border:1px solid black;
-        }
-        .content img:hover{
-            opacity:0.5;
-        }
-        .content{
-            margin:5%;
-        }
-        .content p{
-            margin:3%;
-        }
-        .heading{
-            text-align:center;
-            max-width:100%;
-            font-size:20px;
-            font-size-adjust:inherit;
         }

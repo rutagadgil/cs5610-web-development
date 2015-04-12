@@ -1,20 +1,4 @@
-﻿        /*background images*/
-        img{
-            border:1px solid black;
-            max-width:100%;
-        }
-        /*image slide show*/
-        .fadein {
-            position:relative; 
-            width:100%; 
-            height:auto; 
-        }
-        .fadein img { 
-            position:absolute; 
-            left:0;
-            top:0; 
-        }
-        /*navigation bar*/
+﻿        /*navigation bar*/
         #navbar ul {
             list-style-type: none;
             margin: 0;
@@ -56,28 +40,38 @@
             text-decoration:none;
             text-align:center;
         }
-        /*welcome text animation*/
-        .animation{
-            border:none;
-            display:block;
-            margin-left:auto;
-            margin-right:auto;
-            max-height:100px;
-        }
         body{
             /*background-color:#adf59c;*/
             background-color:#0b3446;
             color:white;
             max-width:100%;
         }
-        footer{
-            max-width:930px;
-            width:100%;
-            overflow:hidden;
-            position:absolute;
-            left:0;
-            bottom:0;
-            height:50px;
-            color:white;
-            background:black;
+        /*fair status selected - radio buttons*/
+        #fairStatus{
+            max-width:100%;
+            background-color:black;
+            color:#adf59c;
+            text-align:center;
+            font-weight:bolder;
+            font-style:oblique;
+            text-transform:uppercase;
+        }
+        /*fairName styling*/
+        .fairName{
+            max-width:100%;
+            background-color:#adf59c;
+            color:black;
+            text-align:center;
+            font-weight:bolder;
+            font-style:oblique;
+            text-transform:uppercase;
+        }
+        /*fair description styling(if available)*/
+        .about{
+            text-align:justify;
+            margin:3%;
+        }
+        /*dates*/
+        .dates{
+            text-align:center;
         }

@@ -29,13 +29,16 @@
                 }
             });
             
+            //var cw = $('#Artist p').width();
+            //$('#Artist p').css({ 'height': cw + 'px' });
+
             $("#submitArtist").click(function () {
-                alert("button click function");
+                //alert("button click function");
                 clearContents();
                 generateURL();
             });
             function generateURL() {
-                alert("inside generateURL");
+                //alert("inside generateURL");
                 var artist = document.getElementById("searchString").value;
                 var url2 = artist;
                 var url3 = "&Token:";
@@ -48,7 +51,7 @@
 
             function getkey(result) {
                 passwd = result;
-                alert(passwd);
+                //alert(passwd);
                 token = retrieveResults(url, passwd);
             }
 
@@ -77,12 +80,18 @@
                                             var linebreak = document.createElement("br");
                                             var para = document.createElement("p");
                                             var artist = document.createElement("a");
-                                            artist.innerText = results.title;
+                                            var artistName = results.title;
+                                            artistName = artistName.substr(0, artistName.indexOf('-'));
+                                            artist.innerText = artistName;
                                             artist.setAttribute('href', results._links.permalink.href);
                                             artist.setAttribute('target', '_blank');
                                             para.appendChild(artist);
                                             para.appendChild(linebreak);
-                                            document.getElementById("Artist").appendChild(para); break;
+                                            var img = document.createElement("img");
+                                            img.setAttribute('src', results._links.thumbnail.href);
+                                            para.appendChild(img);
+                                            document.getElementById("Artist").appendChild(para);
+                                            break;
 
                                         case "Profile":
                                             var linebreak = document.createElement("br");
@@ -102,15 +111,15 @@
                                             para.setAttribute('class', 'artworkpara');
                                             if (results._links.thumbnail.href != "/images/icon-152.png") {
                                                 var linebreak = document.createElement("br");
-                                                var description = document.createElement("p");
-                                                var desc = document.createTextNode(results.description);
                                                 var img = document.createElement("img");
                                                 img.setAttribute('src', results._links.thumbnail.href);
-                                                description.appendChild(desc);
-                                                para.appendChild(description);
-                                                para.appendChild(linebreak);
                                                 para.appendChild(img);
                                             }
+                                            var description = document.createElement("p");
+                                            var desc = document.createTextNode(results.description);
+                                            description.appendChild(desc);
+                                            para.appendChild(description);
+                                            para.appendChild(linebreak);
                                             document.getElementById("Artwork").appendChild(para);
                                             break;
 
@@ -125,8 +134,8 @@
                                                 para.appendChild(linebreak);
                                                 para.appendChild(img);
                                             }
-                                            var href = document.createTextNode(results._links.self.href);
-                                            para.appendChild(href);
+                                            //var href = document.createTextNode(results._links.self.href);
+                                            //para.appendChild(href);
                                             document.getElementById("Gene").appendChild(para);
                                             break;
 
@@ -146,12 +155,14 @@
                                         default:
                                             var para = document.createElement("p");
                                             var linebreak = document.createElement("br");
-                                            //var title = document.createTextNode(results.title);
-                                            var img = document.createElement("img");
-                                            img.setAttribute('src', results._links.thumbnail.href);
-                                            //para.appendChild(title);
+                                            var title = document.createTextNode(results.title);
                                             para.appendChild(linebreak);
-                                            para.appendChild(img);
+                                            para.appendChild(title);
+                                            if (results._links.thumbnail) {
+                                                var img = document.createElement("img");
+                                                img.setAttribute('src', results._links.thumbnail.href);    
+                                                para.appendChild(img);
+                                            }
                                             document.getElementById("Other").appendChild(para);
                                             break;
                                     }
@@ -189,20 +200,30 @@
     </script>
     <style>
         #Artist{
-            
+            max-width:100%;
+            max-height:300px;
+            overflow-y:scroll;
+        }
+        #Artist p{
+            float:left;
+            max-width:30%;
+            margin-left:3%;
+        }
+        #Artist p img{
+            max-width:100%;
         }
         #Artwork{
+            margin-top:5%;
             max-height:300px;
-            overflow:scroll;
+            overflow-y:scroll;
         }
-        #Artwork img{
-            max-width:100%;
-            max-height:150px;
+        
+        #Artwork p{
+            float:left;
+            margin-left:3%;
         }
-        #Artwork img:hover{
+        #Artwork p img{
             max-width:100%;
-            max-height:150px;
-            opacity:0.4;
         }
         .artworkpara{
             margin-right:1%;

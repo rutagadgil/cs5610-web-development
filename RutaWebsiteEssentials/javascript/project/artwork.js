@@ -26,6 +26,8 @@ $(document).ready(function () {
         alert("Error getting API key!");
     }
 
+    /* REFER FOR KEY PRESS EVENTS
+
     $(document).keypress(function (e) {
         if (e.which == 13) {
             flag = 1;
@@ -53,7 +55,7 @@ $(document).ready(function () {
         url = url1 + url2 + url3;
         displayResults(url, passwd);
     });
-
+    */
     $("#ArtworkDetails").hide();
 });
 
@@ -140,81 +142,6 @@ function changeDisplay() {
 function clearContents() {
     $("#displayDetails").empty();
 }
-
-function displayResults(url, passwd) {
-    var noartwork = true;
-    var count = 0;
-    var tokenURL = "https://api.artsy.net/oauth2/access_token?client_id=4ca711359d8808b1614e&client_secret=2caa296b14a0239be025fc31ff6f5686&grant_type=credentials&email=gadgil.r@husky.neu.edu&password=" + passwd;
-    $.getJSON(tokenURL, function (result) {
-        token = result.access_token;
-        alert(url);
-        $.ajax({
-            url: url,
-            type: 'GET',
-            dataType: 'json',
-            success: function display(result) {
-                if (count < 10) {
-                    count++;
-                    //alert("success!!!!");
-                    //alert(url);
-                    //alert(result);
-                    if (result.total_count == 0) {
-                        var text = document.createTextNode("No results match the search criteria. Please try some different search data");
-                        document.getElementById("content").appendChild(text);
-                    }
-                    $.each(result._embedded.results, function (i, results) {
-                        //alert(results.title + results.type);
-                        if (results.type == "Artwork") {
-                            noartwork = false;
-                            //alert("artwork found");
-                            var hrefid = results._links.self.href;
-                            //alert(hrefid);
-                            var para = document.createElement("p");
-                            para.setAttribute('class', 'artworkpara');
-                            if (results._links.thumbnail.href != "/images/icon-152.png") {
-                                var linebreak = document.createElement("br");
-                                var description = document.createElement("p");
-                                var desc = document.createTextNode(results.description);
-                                var img = document.createElement("img");
-                                img.setAttribute('src', results._links.thumbnail.href);
-                                description.appendChild(desc);
-                                para.appendChild(description);
-                                para.appendChild(linebreak);
-                                para.appendChild(img);
-                            }
-                            document.getElementById("content").appendChild(para);
-                        }
-                    });
-                    $.ajax({
-                        url: result._links.next.href,
-                        type: 'GET',
-                        cache: false,
-                        datatype: 'json',
-                        success: function (result) {
-                            display(result);
-                        },
-                        error: function () {
-                            alert("An error has occurred!! Please try again later");
-                        },
-                        beforeSend: function (jqXHR, settings) {
-                            jqXHR.setRequestHeader("X-Access-Token", token);
-                        }
-                    });
-                }
-            },
-            error: function () {
-                alert("An error has occurred!! Please try again later");
-            },
-            fail: function () {
-                alert("Some failure has occurred!! Please try again later");
-            },
-            beforeSend: function (jqXHR, settings) {
-                jqXHR.setRequestHeader("X-Access-Token", token);
-            }
-        });
-    });
-}
-
 function displayDetails(id) {
     clearContents();
     var elementId = parseInt(id.substring(12));
@@ -262,7 +189,7 @@ function retrieveResults(url, passwd) {
             cache: false,
             dataType: 'json',
             success: function loadresults(result) {
-                if (count < 10) {
+                if (count < 3) {
                     count++;
                     $.each(result._embedded.artworks, function (i, artworks) {
                         i++;
@@ -293,7 +220,7 @@ function retrieveResults(url, passwd) {
                             var institutionPara = document.createElement("p");
                             var collecting_institution = document.createTextNode("\nCollecting Institution: " + artworks.collecting_institution);
                             var painting = document.createElement("img");
-                            var artist = determineArtist(artworks._links.artists.href);
+                            //var artist = determineArtist(artworks._links.artists.href);
                             painting.setAttribute('src', artworks._links.thumbnail.href);
                             titlePara.appendChild(title);
                             categoryPara.appendChild(category);
